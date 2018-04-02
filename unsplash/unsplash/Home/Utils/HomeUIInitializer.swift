@@ -45,6 +45,7 @@ class HomeUIInitializer: IInitializer {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier())
         collectionView.backgroundColor = .green
         parentVC.view.addSubview(collectionView)
         var topOffset: CGFloat = 0

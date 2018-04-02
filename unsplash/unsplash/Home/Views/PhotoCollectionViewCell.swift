@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class PhotoTableViewCell: UITableViewCell {
+class PhotoCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Variables & Constants
     

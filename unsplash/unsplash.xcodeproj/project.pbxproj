@@ -29,7 +29,7 @@
 		D717F59520727ECA0020729D /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F59420727ECA0020729D /* HomeModels.swift */; };
 		D717F597207280BB0020729D /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F596207280BB0020729D /* ViewControllerFactory.swift */; };
 		D717F5992072829F0020729D /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5982072829F0020729D /* SearchRequest.swift */; };
-		D717F59B20728C320020729D /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F59A20728C320020729D /* PhotoTableViewCell.swift */; };
+		D717F59B20728C320020729D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F59A20728C320020729D /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +59,7 @@
 		D717F59420727ECA0020729D /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		D717F596207280BB0020729D /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		D717F5982072829F0020729D /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
-		D717F59A20728C320020729D /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		D717F59A20728C320020729D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +173,7 @@
 		D717F588207270F60020729D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D717F59A20728C320020729D /* PhotoTableViewCell.swift */,
+				D717F59A20728C320020729D /* PhotoCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,7 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D717F59B20728C320020729D /* PhotoTableViewCell.swift in Sources */,
+				D717F59B20728C320020729D /* PhotoCollectionViewCell.swift in Sources */,
 				D717F58020726E500020729D /* AppUIInitializer.swift in Sources */,
 				D717F58B2072710F0020729D /* HomeUIInitializer.swift in Sources */,
 				D717F5992072829F0020729D /* SearchRequest.swift in Sources */,
