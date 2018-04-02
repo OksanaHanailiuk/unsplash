@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol HomeDisplayLogic: class {
+    func display(viewModel: Home.ViewModel)
+}
+
 class HomeViewController: UIViewController {
 
+    var interactor: HomeBusinessLogic?
+    var router: HomeRoutingLogic?
+    
     let searchController = UISearchController(searchResultsController: nil)
     
     lazy var uiInititalizer: HomeUIInitializer = { [unowned self] in
@@ -23,6 +30,12 @@ class HomeViewController: UIViewController {
         uiInititalizer.initialize()
     }
 
+}
+
+extension HomeViewController: HomeDisplayLogic {
+    func display(viewModel: Home.ViewModel) {
+        
+    }
 }
 
 extension HomeViewController: UISearchBarDelegate {

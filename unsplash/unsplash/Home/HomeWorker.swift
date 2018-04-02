@@ -8,6 +8,14 @@
 
 import UIKit
 
-class HomeWorker: NSObject {
+protocol HomeWorkerDelegate {
+    func response(_ response: Home.Response)
+}
 
+class HomeWorker: NSObject {
+    var delegate: HomeWorkerDelegate?
+    
+    func fetch() {
+        
+    }
 }

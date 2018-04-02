@@ -8,6 +8,20 @@
 
 import UIKit
 
-class HomeRouter: NSObject {
+protocol HomeRoutingLogic {
+    func show(_ viewController: UIViewController)
+}
 
+class HomeRouter: HomeRoutingLogic {
+
+    weak var viewController: HomeViewController?
+    
+    //MARK: - inititalizer
+    init(viewController: HomeViewController?) {
+        self.viewController = viewController
+    }
+    
+    func show(_ viewController: UIViewController) {
+        
+    }
 }

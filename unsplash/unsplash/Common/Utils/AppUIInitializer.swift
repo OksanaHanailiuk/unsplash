@@ -11,11 +11,9 @@ import UIKit
 class AppUIInitializer: IInitializer {
     
     func initialize() {
-        let homeVC = HomeViewController()
-        //TODO: - configure view with clean arch
-        let vc = UINavigationController(rootViewController: homeVC)
+        let homeVC = ViewControllerFactory().createHomeViewController()
         let window = (UIApplication.shared.delegate as? AppDelegate)?.window
-        window?.rootViewController = vc
+        window?.rootViewController = homeVC
         window?.makeKeyAndVisible()
     }
 }

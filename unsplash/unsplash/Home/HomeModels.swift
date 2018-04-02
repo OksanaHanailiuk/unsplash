@@ -8,6 +8,16 @@
 
 import UIKit
 
-class HomeModels: NSObject {
+enum Home {
+    
+    struct Request {
+    }
+    
+    struct Response {
+    
+    }
+    
+    struct ViewModel {
 
+    }
 }

@@ -8,6 +8,31 @@
 
 import UIKit
 
-class HomeInteractor: NSObject {
+protocol HomeBusinessLogic {
+    func process()
+}
 
+class HomeInteractor: HomeBusinessLogic {
+    
+    private var presenter: HomePresentationLogic?
+    private var worker: HomeWorker?
+    
+    //MARK: - inititalizer
+    init(presenter: HomePresentationLogic?) {
+        self.presenter = presenter
+        worker = HomeWorker()
+        worker?.delegate = self
+    }
+    
+    func process() {
+        //TODO: - 
+    }
+}
+
+extension HomeInteractor: HomeWorkerDelegate {
+    func response(_ response: Home.Response) {
+        presenter?.present(response)
+    }
+    
+    
 }

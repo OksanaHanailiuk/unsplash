@@ -8,6 +8,22 @@
 
 import UIKit
 
-class HomePresenter: NSObject {
+protocol HomePresentationLogic {
+    func present(_ response: Home.Response)
+}
 
+class HomePresenter: HomePresentationLogic {
+    
+    weak var viewController: HomeDisplayLogic?
+    
+    //MARK: - inititalizer
+    init(viewController: HomeDisplayLogic?) {
+        self.viewController = viewController
+    }
+    
+    func present(_ response: Home.Response) {
+        //TODO: - create view model from response
+        let viewModel = Home.ViewModel()
+        viewController?.display(viewModel: viewModel)
+    }
 }
