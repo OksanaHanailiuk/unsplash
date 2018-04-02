@@ -28,8 +28,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Public view setup
-    
-    func setupSubviews() {
+     func setupSubviews(for model: Home.ViewModel.DisplayedPhoto) {
         addPhotoImageView()
     }
     

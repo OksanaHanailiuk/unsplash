@@ -11,6 +11,7 @@ import UIKit
 enum Home {
     
     struct Request {
+        let query: String
     }
     
     struct Response {
@@ -18,6 +19,11 @@ enum Home {
     }
     
     struct ViewModel {
-
+        struct DisplayedPhoto {
+            var id: String
+            var title: String
+            var url: URL
+        }
+        var displayedPhotos: [DisplayedPhoto]
     }
 }

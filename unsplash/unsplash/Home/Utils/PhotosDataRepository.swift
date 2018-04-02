@@ -8,6 +8,24 @@
 
 import UIKit
 
-class PhotosDataRepository: NSObject {
-
+class PhotosDataRepository {
+    
+    private var photos: [Home.ViewModel.DisplayedPhoto] = []
+    
+    var dispayedPhotos: [Home.ViewModel.DisplayedPhoto] = [] {
+        didSet {
+            photos = dispayedPhotos
+        }
+    }
+    
+    var count: Int {
+        return photos.count
+    }
+    
+    func item(at index: Int) -> Home.ViewModel.DisplayedPhoto? {
+        if index >= 0 && index < photos.count {
+            return photos[index]
+        }
+        return nil
+    }
 }

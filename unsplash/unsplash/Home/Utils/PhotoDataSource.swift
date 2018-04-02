@@ -9,12 +9,19 @@
 import UIKit
 
 class PhotoDataSource: NSObject {
-
+    private weak var repository: PhotosDataRepository?
+    
+    // MARK: - Initialization
+    
+    init(repository: PhotosDataRepository?) {
+        self.repository = repository
+    }
 }
 
 extension PhotoDataSource: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        guard let count = repository?.count else { return 0 }
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -22,7 +29,11 @@ extension PhotoDataSource: UICollectionViewDataSource {
              print("\(#file) at line \(#line): Failed to fetch cell for indexPath \(indexPath)")
             return UICollectionViewCell()
         }
-        cell.setupSubviews()
+        guard let model = repository?.item(at: indexPath.row) else {
+            print("\(#file) at line \(#line): Failed to fetch item for index \(indexPath.row)")
+            return UICollectionViewCell()
+        }
+        cell.setupSubviews(for: model)
         return cell
     }
 }

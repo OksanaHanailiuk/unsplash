@@ -30,8 +30,13 @@ class HomeViewController: UIViewController {
         return initializer
     }()
     
+    lazy var dataRepository: PhotosDataRepository = { [unowned self] in
+        let repo = PhotosDataRepository()
+        return repo
+    }()
+    
     lazy var dataSource: PhotoDataSource = { [unowned self] in
-        let source = PhotoDataSource()
+        let source = PhotoDataSource(repository: dataRepository)
         return source
     }()
     
@@ -45,7 +50,8 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeDisplayLogic {
     func display(viewModel: Home.ViewModel) {
-        
+        dataRepository.dispayedPhotos = viewModel.displayedPhotos
+        photosCollectionView?.reloadData()
     }
 }
 

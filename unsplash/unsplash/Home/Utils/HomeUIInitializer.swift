@@ -43,11 +43,12 @@ class HomeUIInitializer: IInitializer {
     
     private func addCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        //layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier())
         collectionView.backgroundColor = .green
         collectionView.dataSource = parentVC.dataSource
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         parentVC.view.addSubview(collectionView)
         var topOffset: CGFloat = 0
         if let navBarFrame = parentVC.navigationController?.navigationBar.frame {

@@ -23,7 +23,5 @@ class HomePresenter: HomePresentationLogic {
     
     func present(_ response: Home.Response) {
         //TODO: - create view model from response
-        let viewModel = Home.ViewModel()
-        viewController?.display(viewModel: viewModel)
     }
 }
