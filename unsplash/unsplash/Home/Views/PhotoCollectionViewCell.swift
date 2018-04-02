@@ -37,6 +37,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     private func addPhotoImageView() {
         if photoImageView != nil { return }
         photoImageView = UIImageView()
+        photoImageView?.backgroundColor = .red
         photoImageView?.frame.size = frame.size
         if photoImageView != nil {
             addSubview(photoImageView!)

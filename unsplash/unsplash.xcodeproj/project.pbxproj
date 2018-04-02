@@ -30,6 +30,9 @@
 		D717F597207280BB0020729D /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F596207280BB0020729D /* ViewControllerFactory.swift */; };
 		D717F5992072829F0020729D /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5982072829F0020729D /* SearchRequest.swift */; };
 		D717F59B20728C320020729D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F59A20728C320020729D /* PhotoCollectionViewCell.swift */; };
+		D717F59D20728DEA0020729D /* PhotosDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F59C20728DEA0020729D /* PhotosDelegate.swift */; };
+		D717F59F20728E030020729D /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F59E20728E030020729D /* PhotoDataSource.swift */; };
+		D717F5A120728E130020729D /* PhotosDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5A020728E130020729D /* PhotosDataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		D717F596207280BB0020729D /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		D717F5982072829F0020729D /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		D717F59A20728C320020729D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		D717F59C20728DEA0020729D /* PhotosDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDelegate.swift; sourceTree = "<group>"; };
+		D717F59E20728E030020729D /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
+		D717F5A020728E130020729D /* PhotosDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDataRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				D717F58A2072710F0020729D /* HomeUIInitializer.swift */,
+				D717F59C20728DEA0020729D /* PhotosDelegate.swift */,
+				D717F59E20728E030020729D /* PhotoDataSource.swift */,
+				D717F5A020728E130020729D /* PhotosDataRepository.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -336,9 +345,11 @@
 				D717F58220726E730020729D /* IInitializer.swift in Sources */,
 				D717F597207280BB0020729D /* ViewControllerFactory.swift in Sources */,
 				D717F577207257270020729D /* Server.swift in Sources */,
+				D717F59F20728E030020729D /* PhotoDataSource.swift in Sources */,
 				D717F59120727EAD0020729D /* HomeRouter.swift in Sources */,
 				D717F59520727ECA0020729D /* HomeModels.swift in Sources */,
 				D717F57E207259B90020729D /* PhotosRequest.swift in Sources */,
+				D717F5A120728E130020729D /* PhotosDataRepository.swift in Sources */,
 				D717F57A207257270020729D /* IRequest.swift in Sources */,
 				D717F578207257270020729D /* HeadersAdapter.swift in Sources */,
 				D717F58F20727EA10020729D /* HomePresenter.swift in Sources */,
@@ -349,6 +360,7 @@
 				D717F574207257270020729D /* ServerConstants.swift in Sources */,
 				D717F59320727EBD0020729D /* HomeWorker.swift in Sources */,
 				D717F55020724F460020729D /* AppDelegate.swift in Sources */,
+				D717F59D20728DEA0020729D /* PhotosDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

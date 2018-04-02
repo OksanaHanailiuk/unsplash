@@ -47,6 +47,7 @@ class HomeUIInitializer: IInitializer {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier())
         collectionView.backgroundColor = .green
+        collectionView.dataSource = parentVC.dataSource
         parentVC.view.addSubview(collectionView)
         var topOffset: CGFloat = 0
         if let navBarFrame = parentVC.navigationController?.navigationBar.frame {

@@ -30,6 +30,11 @@ class HomeViewController: UIViewController {
         return initializer
     }()
     
+    lazy var dataSource: PhotoDataSource = { [unowned self] in
+        let source = PhotoDataSource()
+        return source
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
