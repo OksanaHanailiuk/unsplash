@@ -17,6 +17,23 @@ class HomeUIInitializer: IInitializer {
     }
     
     func initialize() {
+        // Setup the Search Controller
         
+        parentVC.navigationController?.navigationBar.barTintColor = .white
+        setupSearchController()
+
+    }
+    
+    private func setupSearchController() {
+        parentVC.view.backgroundColor = .white
+        parentVC.searchController.searchResultsUpdater = parentVC
+        parentVC.searchController.obscuresBackgroundDuringPresentation = false
+        parentVC.searchController.hidesNavigationBarDuringPresentation = false
+        parentVC.searchController.dimsBackgroundDuringPresentation = false
+        parentVC.searchController.searchBar.placeholder = "Search Photos"
+        parentVC.navigationItem.searchController = parentVC.searchController
+        parentVC.definesPresentationContext = true
+        
+        parentVC.searchController.searchBar.delegate = parentVC
     }
 }

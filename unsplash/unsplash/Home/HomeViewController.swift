@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    let searchController = UISearchController(searchResultsController: nil)
+    
     lazy var uiInititalizer: HomeUIInitializer = { [unowned self] in
         let initializer = HomeUIInitializer(parentVC: self)
         return initializer
@@ -18,8 +20,21 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .red
-        // Do any additional setup after loading the view.
+        uiInititalizer.initialize()
     }
 
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    // MARK: - UISearchBar Delegate
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        
+    }
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
 }
