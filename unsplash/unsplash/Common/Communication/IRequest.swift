@@ -11,6 +11,7 @@ import Alamofire
 
 enum RequestType {
     case photos
+    case searchPhotos
 }
 
 protocol IRequest {

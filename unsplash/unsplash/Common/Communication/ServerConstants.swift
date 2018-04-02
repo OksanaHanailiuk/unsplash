@@ -11,6 +11,7 @@ import Foundation
 struct Api {
     static let baseUrl: String = "https://api.unsplash.com"
     static let photos: String = "/photos"
+    static let searchPhotos: String = "/search/photos"
 }
 
 enum HttpResponseCode: Int {
