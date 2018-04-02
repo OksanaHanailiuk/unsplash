@@ -21,6 +21,7 @@
 		D717F58020726E500020729D /* AppUIInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F57F20726E500020729D /* AppUIInitializer.swift */; };
 		D717F58220726E730020729D /* IInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F58120726E730020729D /* IInitializer.swift */; };
 		D717F58720726F100020729D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F58620726F100020729D /* HomeViewController.swift */; };
+		D717F58B2072710F0020729D /* HomeUIInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F58A2072710F0020729D /* HomeUIInitializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		D717F57F20726E500020729D /* AppUIInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUIInitializer.swift; sourceTree = "<group>"; };
 		D717F58120726E730020729D /* IInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IInitializer.swift; sourceTree = "<group>"; };
 		D717F58620726F100020729D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D717F58A2072710F0020729D /* HomeUIInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUIInitializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +140,26 @@
 		D717F58520726EF90020729D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D717F589207270F60020729D /* Utils */,
+				D717F588207270F60020729D /* Views */,
 				D717F58620726F100020729D /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D717F588207270F60020729D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D717F589207270F60020729D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D717F58A2072710F0020729D /* HomeUIInitializer.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		EB85A669DF0ABC8F0271716E /* Pods */ = {
@@ -287,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D717F58020726E500020729D /* AppUIInitializer.swift in Sources */,
+				D717F58B2072710F0020729D /* HomeUIInitializer.swift in Sources */,
 				D717F58220726E730020729D /* IInitializer.swift in Sources */,
 				D717F577207257270020729D /* Server.swift in Sources */,
 				D717F57E207259B90020729D /* PhotosRequest.swift in Sources */,

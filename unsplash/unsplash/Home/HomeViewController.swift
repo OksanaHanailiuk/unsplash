@@ -10,6 +10,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    lazy var uiInititalizer: HomeUIInitializer = { [unowned self] in
+        let initializer = HomeUIInitializer(parentVC: self)
+        return initializer
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
