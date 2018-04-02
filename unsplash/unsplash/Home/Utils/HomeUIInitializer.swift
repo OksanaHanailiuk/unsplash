@@ -50,6 +50,7 @@ class HomeUIInitializer: IInitializer {
         collectionView.dataSource = parentVC.dataSource
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         parentVC.view.addSubview(collectionView)
+        parentVC.photosCollectionView = collectionView
         var topOffset: CGFloat = 0
         if let navBarFrame = parentVC.navigationController?.navigationBar.frame {
             topOffset = navBarFrame.origin.y + navBarFrame.size.height + 13

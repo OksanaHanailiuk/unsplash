@@ -15,7 +15,15 @@ protocol HomeWorkerDelegate {
 class HomeWorker: NSObject {
     var delegate: HomeWorkerDelegate?
     
-    func fetch() {
-        
+    func fetchPhotos() {
+        let photoRequest = PhotosRequest()
+        Server.sharedServer.sendRequest(photoRequest) { (response) in
+            print(response)
+            if let data = response.data {
+                let photos = ParsePhotosRequest(json: data).execute()
+                let homeResponse = Home.Response(photos: photos)
+                self.delegate?.response(homeResponse)
+            }
+        }
     }
 }

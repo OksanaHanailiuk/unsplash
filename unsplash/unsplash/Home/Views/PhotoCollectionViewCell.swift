@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Haneke
 
 class PhotoCollectionViewCell: UICollectionViewCell {
 
@@ -30,6 +31,13 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     // MARK: - Public view setup
      func setupSubviews(for model: Home.ViewModel.DisplayedPhoto) {
         addPhotoImageView()
+        if let imageUrl = model.url {
+            photoImageView?.hnk_setImageFromURL(imageUrl, placeholder: nil, format: nil, failure: { [weak self] error in
+                print("Error")
+                }, success: { [weak self] image in
+                    self?.photoImageView?.image = image
+            })
+        }
     }
     
     // MARK: - private part

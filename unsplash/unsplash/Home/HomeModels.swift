@@ -15,14 +15,14 @@ enum Home {
     }
     
     struct Response {
-    
+        var photos: [Photo]
     }
     
     struct ViewModel {
         struct DisplayedPhoto {
-            var id: String
-            var title: String
-            var url: URL
+            var id: String?
+            var title: String?
+            var url: URL?
         }
         var displayedPhotos: [DisplayedPhoto]
     }

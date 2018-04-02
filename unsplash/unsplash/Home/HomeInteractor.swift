@@ -25,7 +25,7 @@ class HomeInteractor: HomeBusinessLogic {
     }
     
     func process() {
-        //TODO: - 
+        worker?.fetchPhotos()
     }
 }
 
@@ -33,6 +33,4 @@ extension HomeInteractor: HomeWorkerDelegate {
     func response(_ response: Home.Response) {
         presenter?.present(response)
     }
-    
-    
 }

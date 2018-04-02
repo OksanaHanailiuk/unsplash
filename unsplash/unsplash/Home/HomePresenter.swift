@@ -22,6 +22,12 @@ class HomePresenter: HomePresentationLogic {
     }
     
     func present(_ response: Home.Response) {
-        //TODO: - create view model from response
+        var displayedPhotos: [Home.ViewModel.DisplayedPhoto] = []
+        response.photos.forEach { photo in
+            let displayedPhoto = Home.ViewModel.DisplayedPhoto(id: nil, title: nil, url: photo.url)
+            displayedPhotos.append(displayedPhoto)
+        }
+        let viewModel = Home.ViewModel(displayedPhotos: displayedPhotos)
+        viewController?.display(viewModel: viewModel)
     }
 }

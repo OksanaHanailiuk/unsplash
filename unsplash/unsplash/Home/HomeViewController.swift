@@ -44,6 +44,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         uiInititalizer.initialize()
+        interactor?.process()
     }
 
 }
