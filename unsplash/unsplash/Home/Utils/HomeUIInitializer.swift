@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class HomeUIInitializer: IInitializer {
     
@@ -17,23 +18,44 @@ class HomeUIInitializer: IInitializer {
     }
     
     func initialize() {
-        // Setup the Search Controller
+
+         parentVC.view.backgroundColor = .white
         
-        parentVC.navigationController?.navigationBar.barTintColor = .white
         setupSearchController()
+        addCollectionView()
 
     }
     
     private func setupSearchController() {
-        parentVC.view.backgroundColor = .white
-        parentVC.searchController.searchResultsUpdater = parentVC
-        parentVC.searchController.obscuresBackgroundDuringPresentation = false
-        parentVC.searchController.hidesNavigationBarDuringPresentation = false
-        parentVC.searchController.dimsBackgroundDuringPresentation = false
-        parentVC.searchController.searchBar.placeholder = "Search Photos"
-        parentVC.navigationItem.searchController = parentVC.searchController
-        parentVC.definesPresentationContext = true
-        
-        parentVC.searchController.searchBar.delegate = parentVC
+//        parentVC.searchController.searchResultsUpdater = parentVC
+//        parentVC.searchController.obscuresBackgroundDuringPresentation = false
+//        parentVC.searchController.hidesNavigationBarDuringPresentation = false
+//        parentVC.searchController.dimsBackgroundDuringPresentation = false
+//        parentVC.searchController.searchBar.placeholder = "Search Photos"
+//        parentVC.navigationItem.searchController = parentVC.searchController
+//        parentVC.definesPresentationContext = true
+//
+//        parentVC.searchController.searchBar.delegate = parentVC
+        parentVC.searchBar.placeholder = "Search Photos"
+        parentVC.searchBar.sizeToFit()
+        parentVC.navigationItem.titleView = parentVC.searchBar
+    }
+    
+    private func addCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .green
+        parentVC.view.addSubview(collectionView)
+        var topOffset: CGFloat = 0
+        if let navBarFrame = parentVC.navigationController?.navigationBar.frame {
+            topOffset = navBarFrame.origin.y + navBarFrame.size.height + 13
+        }
+        collectionView.snp.makeConstraints { maker in
+            maker.leading.equalToSuperview()
+            maker.top.equalToSuperview().offset(topOffset)
+            maker.trailing.equalToSuperview()
+            maker.bottom.equalToSuperview()
+        }
     }
 }

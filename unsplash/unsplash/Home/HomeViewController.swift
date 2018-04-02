@@ -17,7 +17,13 @@ class HomeViewController: UIViewController {
     var interactor: HomeBusinessLogic?
     var router: HomeRoutingLogic?
     
-    let searchController = UISearchController(searchResultsController: nil)
+    var photosCollectionView: UICollectionView?
+    
+    lazy var searchBar: UISearchBar = { [unowned self] in
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        return searchBar
+    }()
     
     lazy var uiInititalizer: HomeUIInitializer = { [unowned self] in
         let initializer = HomeUIInitializer(parentVC: self)
