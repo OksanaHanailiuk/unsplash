@@ -52,7 +52,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         photoImageView = UIImageView()
         photoImageView?.backgroundColor = .red
         photoImageView?.frame.size = frame.size
-        photoImageView?.contentMode = .scaleAspectFit
+        photoImageView?.contentMode = .scaleAspectFill
         if photoImageView != nil {
             addSubview(photoImageView!)
             photoImageView?.snp.makeConstraints({ maker in

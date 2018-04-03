@@ -12,8 +12,10 @@ import Alamofire
 class SearchRequest: IRequest {
     
     private var query: String
+    private var itemsPerPage: Int?
+    private var pageNumber: Int?
     
-    init(query: String) {
+    init(query: String, itemsPerPage: Int? = nil, pageNumber: Int? = nil) {
         self.query = query
     }
     
@@ -38,6 +40,9 @@ class SearchRequest: IRequest {
     }
     
     func parameters() -> Parameters? {
-        return [Parameter.query: query, "per_page": 30]
+        guard let perPage = itemsPerPage, let page = pageNumber else {
+            return [Parameter.query: query]
+        }
+        return [Parameter.query: query, Parameter.perPage: perPage, Parameter.page: page]
     }
 }

@@ -21,6 +21,8 @@ enum HttpResponseCode: Int {
 
 struct Parameter {
     static let query = "query"
+    static let perPage = "per_page"
+    static let page = "page"
 }
 
 struct JsonConstants {
