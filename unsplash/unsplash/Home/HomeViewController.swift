@@ -83,6 +83,10 @@ extension HomeViewController: UISearchBarDelegate {
         let request = Home.Request(query: searchText)
         interactor?.process(request)
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
 
 extension HomeViewController: PortraitLayoutDelegate {
