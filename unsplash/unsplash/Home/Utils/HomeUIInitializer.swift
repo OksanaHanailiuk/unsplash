@@ -27,15 +27,6 @@ class HomeUIInitializer: IInitializer {
     }
     
     private func setupSearchController() {
-//        parentVC.searchController.searchResultsUpdater = parentVC
-//        parentVC.searchController.obscuresBackgroundDuringPresentation = false
-//        parentVC.searchController.hidesNavigationBarDuringPresentation = false
-//        parentVC.searchController.dimsBackgroundDuringPresentation = false
-//        parentVC.searchController.searchBar.placeholder = "Search Photos"
-//        parentVC.navigationItem.searchController = parentVC.searchController
-//        parentVC.definesPresentationContext = true
-//
-//        parentVC.searchController.searchBar.delegate = parentVC
         parentVC.searchBar.placeholder = "Search Photos"
         parentVC.searchBar.sizeToFit()
         parentVC.navigationItem.titleView = parentVC.searchBar
@@ -43,7 +34,6 @@ class HomeUIInitializer: IInitializer {
     
     private func addCollectionView() {
         let layout = UICollectionViewFlowLayout()
-        //layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier())
         collectionView.backgroundColor = .green

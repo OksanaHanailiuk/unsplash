@@ -18,8 +18,8 @@ class Server: NSObject {
         NSLog("Sending request: \(request.endpoint)")
         let sessionManager = Alamofire.SessionManager.default
         sessionManager.adapter = HeadersAdapter()
-        sessionManager.request(request.endpoint, method: request.httpMethod, parameters: request.parameters(), encoding: request.encoding, headers: request.httpHeaders()).responseJSON { response in
-            self.handleResponse(request, response: response, responseHandler: responseHandler)
+        sessionManager.request(request.endpoint, method: request.httpMethod, parameters: request.parameters(), encoding: request.encoding, headers: request.httpHeaders()).responseJSON { [weak self] response in
+            self?.handleResponse(request, response: response, responseHandler: responseHandler)
         }
     }
     
