@@ -38,7 +38,7 @@ class HomeUIInitializer: IInitializer {
         collectionView.backgroundColor = .white
         collectionView.dataSource = parentVC.dataSource
         collectionView.delegate = parentVC.delegate
-        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         parentVC.view.addSubview(collectionView)
         parentVC.photosCollectionView = collectionView
         var topOffset: CGFloat = 0

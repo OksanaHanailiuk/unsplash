@@ -30,7 +30,7 @@ extension PhotosDelegate: UICollectionViewDelegateFlowLayout {
         if let height = repository?.item(at: indexPath.row)?.height, let width = repository?.item(at: indexPath.row)?.width {
             return CGSize(width: width/25, height: height/25)
         } else {
-            return .zero
+            return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.height/3)
         }
     }
 }
