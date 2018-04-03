@@ -44,7 +44,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         uiInititalizer.initialize()
-        interactor?.process()
+        let request = Home.Request(query: "nature")
+        interactor?.process(request)
     }
 
 }

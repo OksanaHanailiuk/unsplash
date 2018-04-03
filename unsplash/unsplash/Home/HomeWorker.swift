@@ -15,8 +15,8 @@ protocol HomeWorkerDelegate {
 class HomeWorker: NSObject {
     var delegate: HomeWorkerDelegate?
     
-    func fetchPhotos() {
-        SearchEngine().search(by: "nature") { (response, shouldAppend) in
+    func fetchPhotos(_ request: Home.Request) {
+        SearchEngine().search(by: request.query) { (response, shouldAppend) in
             let homeResponse = Home.Response(photos: response.photos)
             self.delegate?.response(homeResponse)
         }

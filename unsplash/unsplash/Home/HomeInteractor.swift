@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeBusinessLogic {
-    func process()
+    func process(_ request: Home.Request)
 }
 
 class HomeInteractor: HomeBusinessLogic {
@@ -24,8 +24,8 @@ class HomeInteractor: HomeBusinessLogic {
         worker?.delegate = self
     }
     
-    func process() {
-        worker?.fetchPhotos()
+    func process(_ request: Home.Request) {
+        worker?.fetchPhotos(request)
     }
 }
 
