@@ -44,6 +44,7 @@ class HomeViewController: UIViewController {
         let delegate = PhotosDelegate(repository: dataRepository)
         delegate.loadMorePhotos = loadMorePhotosAction
         delegate.startScrolling = startScrollingAction
+        delegate.didSelectItem = didSelectItem
         return delegate
     }()
     
@@ -63,6 +64,10 @@ class HomeViewController: UIViewController {
     
     lazy var startScrollingAction: () -> Void = { [weak self] in
         self?.searchBar.resignFirstResponder()
+    }
+    
+    lazy var didSelectItem: (Home.ViewModel.DisplayedPhoto) -> Void = { [weak self] photoItem in
+        self?.navigationController?.pushViewController(DetailViewController(), animated: true)
     }
 }
 

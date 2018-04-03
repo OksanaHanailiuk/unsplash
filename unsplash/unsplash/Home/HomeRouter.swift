@@ -14,14 +14,14 @@ protocol HomeRoutingLogic {
 
 class HomeRouter: HomeRoutingLogic {
 
-    weak var viewController: HomeViewController?
+    weak var homeVC: HomeViewController?
     
     //MARK: - inititalizer
     init(viewController: HomeViewController?) {
-        self.viewController = viewController
+        self.homeVC = viewController
     }
     
     func show(_ viewController: UIViewController) {
-        
+        homeVC?.navigationController?.pushViewController(viewController, animated: false)
     }
 }

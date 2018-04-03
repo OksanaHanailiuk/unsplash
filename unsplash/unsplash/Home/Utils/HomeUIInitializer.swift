@@ -38,6 +38,7 @@ class HomeUIInitializer: IInitializer {
     private func setupSearchController() {
         parentVC.searchBar.placeholder = "Search Photos"
         parentVC.searchBar.sizeToFit()
+        parentVC.searchBar.isTranslucent = true
         parentVC.navigationItem.titleView = parentVC.searchBar
     }
     

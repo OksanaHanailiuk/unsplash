@@ -37,6 +37,8 @@
 		D717F5B220737D870020729D /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5AF20737D870020729D /* SearchRequest.swift */; };
 		D717F5B320737D870020729D /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5B020737D870020729D /* SearchResponse.swift */; };
 		D7544FFF2073A64300FE2868 /* PortraitLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7544FFE2073A64300FE2868 /* PortraitLayout.swift */; };
+		D75450022073F35400FE2868 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450012073F35400FE2868 /* DetailViewController.swift */; };
+		D75450052073F53A00FE2868 /* DetailViewUIInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450042073F53A00FE2868 /* DetailViewUIInitializer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		D717F5AF20737D870020729D /* SearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
 		D717F5B020737D870020729D /* SearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		D7544FFE2073A64300FE2868 /* PortraitLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitLayout.swift; sourceTree = "<group>"; };
+		D75450012073F35400FE2868 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D75450042073F53A00FE2868 /* DetailViewUIInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewUIInitializer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 			children = (
 				D717F5A220729A280020729D /* Models */,
 				D717F58520726EF90020729D /* Home */,
+				D75450002073F33700FE2868 /* Detail */,
 				D717F561207257270020729D /* Common */,
 				D717F54F20724F460020729D /* AppDelegate.swift */,
 				D717F55620724F460020729D /* Assets.xcassets */,
@@ -231,6 +236,23 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
+		D75450002073F33700FE2868 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D75450032073F51C00FE2868 /* Utils */,
+				D75450012073F35400FE2868 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		D75450032073F51C00FE2868 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D75450042073F53A00FE2868 /* DetailViewUIInitializer.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		EB85A669DF0ABC8F0271716E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +341,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-unsplash/Pods-unsplash-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HanekeSwift/Haneke.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -326,6 +349,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -382,6 +406,7 @@
 				D717F58220726E730020729D /* IInitializer.swift in Sources */,
 				D717F597207280BB0020729D /* ViewControllerFactory.swift in Sources */,
 				D717F5AA20736D9E0020729D /* ImageUrls.swift in Sources */,
+				D75450052073F53A00FE2868 /* DetailViewUIInitializer.swift in Sources */,
 				D717F577207257270020729D /* Server.swift in Sources */,
 				D717F59F20728E030020729D /* PhotoDataSource.swift in Sources */,
 				D717F5B120737D870020729D /* SearchEngine.swift in Sources */,
@@ -401,6 +426,7 @@
 				D717F59320727EBD0020729D /* HomeWorker.swift in Sources */,
 				D717F55020724F460020729D /* AppDelegate.swift in Sources */,
 				D717F59D20728DEA0020729D /* PhotosDelegate.swift in Sources */,
+				D75450022073F35400FE2868 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

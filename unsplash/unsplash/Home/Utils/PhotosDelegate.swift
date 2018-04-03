@@ -14,6 +14,7 @@ class PhotosDelegate: NSObject {
     
     var loadMorePhotos: (() -> Void)?
     var startScrolling: (() -> Void)?
+    var didSelectItem: ((Home.ViewModel.DisplayedPhoto) -> Void)?
     
     // MARK: - Initialization
     init(repository: PhotosDataRepository?) {
@@ -23,7 +24,8 @@ class PhotosDelegate: NSObject {
 
 extension PhotosDelegate: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO: - select item
+        guard let photo = repository?.item(at: indexPath.row) else { return }
+        didSelectItem?(photo)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
