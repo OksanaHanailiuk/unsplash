@@ -11,6 +11,12 @@ import Alamofire
 
 class SearchRequest: IRequest {
     
+    private var query: String
+    
+    init(query: String) {
+        self.query = query
+    }
+    
     var httpMethod: HTTPMethod {
         get { return .get }
     }
@@ -32,6 +38,6 @@ class SearchRequest: IRequest {
     }
     
     func parameters() -> Parameters? {
-        return nil
+        return ["query": query]
     }
 }

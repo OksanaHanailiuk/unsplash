@@ -16,14 +16,9 @@ class HomeWorker: NSObject {
     var delegate: HomeWorkerDelegate?
     
     func fetchPhotos() {
-        let photoRequest = PhotosRequest()
-        Server.sharedServer.sendRequest(photoRequest) { (response) in
-            print(response)
-            if let data = response.data {
-                let photos = ParsePhotosRequest(json: data).execute()
-                let homeResponse = Home.Response(photos: photos)
-                self.delegate?.response(homeResponse)
-            }
+        SearchEngine().search(by: "nature") { (photos, shouldAppend) in
+            let homeResponse = Home.Response(photos: photos)
+            self.delegate?.response(homeResponse)
         }
     }
 }

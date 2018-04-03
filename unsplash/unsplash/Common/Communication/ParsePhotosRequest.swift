@@ -19,7 +19,7 @@ class ParsePhotosRequest {
     
     func execute() -> [Photo] {
         var photos = [Photo]()
-        json.arrayValue.forEach { item in
+        json["results"].arrayValue.forEach { item in
             let imahePath = item["urls"]["thumb"].stringValue
             let photo = Photo(imagePath: imahePath)
             photos.append(photo)

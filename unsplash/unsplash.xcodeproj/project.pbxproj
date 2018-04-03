@@ -35,6 +35,7 @@
 		D717F5A120728E130020729D /* PhotosDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5A020728E130020729D /* PhotosDataRepository.swift */; };
 		D717F5A420729A5C0020729D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5A320729A5C0020729D /* Photo.swift */; };
 		D717F5A620729A970020729D /* ParsePhotosRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5A520729A970020729D /* ParsePhotosRequest.swift */; };
+		D717F5A8207367B50020729D /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5A7207367B50020729D /* SearchEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		D717F5A020728E130020729D /* PhotosDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDataRepository.swift; sourceTree = "<group>"; };
 		D717F5A320729A5C0020729D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		D717F5A520729A970020729D /* ParsePhotosRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsePhotosRequest.swift; sourceTree = "<group>"; };
+		D717F5A7207367B50020729D /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				D717F57D207259B90020729D /* PhotosRequest.swift */,
 				D717F5982072829F0020729D /* SearchRequest.swift */,
 				D717F5A520729A970020729D /* ParsePhotosRequest.swift */,
+				D717F5A7207367B50020729D /* SearchEngine.swift */,
 			);
 			path = Communication;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				D717F59320727EBD0020729D /* HomeWorker.swift in Sources */,
 				D717F55020724F460020729D /* AppDelegate.swift in Sources */,
 				D717F59D20728DEA0020729D /* PhotosDelegate.swift in Sources */,
+				D717F5A8207367B50020729D /* SearchEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
