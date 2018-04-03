@@ -55,6 +55,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         uiInititalizer.initialize()
+        searchBar.becomeFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,12 +114,8 @@ extension HomeViewController: KeyboardControllerDelegate {
 
 extension HomeViewController: PortraitLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        if let height = dataRepository.item(at: indexPath.row)?.height {
-            let collectionViewContentWidth = collectionView.contentSize.width/2
-            let coef = CGFloat(height)/collectionViewContentWidth
-            return CGFloat(height/20)
-        } else {
-            return 100
-        }
+        let height = dataRepository.item(at: indexPath.row)?.height
+        let width = dataRepository.item(at: indexPath.row)?.width
+        return uiInititalizer.calculateHeight(with: height, and: width)
     }
 }

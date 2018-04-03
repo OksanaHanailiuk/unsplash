@@ -13,16 +13,26 @@ class HomeUIInitializer: IInitializer {
     
     private var parentVC: HomeViewController
     
+    private let defaultCellHeight: CGFloat = 50
+    
     init(parentVC: HomeViewController) {
         self.parentVC = parentVC
     }
     
     func initialize() {
 
-         parentVC.view.backgroundColor = .white
-        
+        parentVC.view.backgroundColor = .white
         setupSearchController()
         addCollectionView()
+    }
+    
+    func calculateHeight(with height: Int?, and width: Int?) -> CGFloat {
+        if let unwrappedHeight = height, let unwrappedWidth = width, let collectionView = parentVC.photosCollectionView {
+            let collectionViewContentWidth = collectionView.contentSize.width/2
+            let coef = CGFloat(unwrappedWidth)/collectionViewContentWidth
+            return CGFloat(CGFloat(unwrappedHeight)/coef)
+        }
+        return defaultCellHeight
     }
     
     private func setupSearchController() {
