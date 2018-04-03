@@ -38,6 +38,6 @@ class SearchRequest: IRequest {
     }
     
     func parameters() -> Parameters? {
-        return [Parameter.query: query]
+        return [Parameter.query: query, "per_page": 30]
     }
 }

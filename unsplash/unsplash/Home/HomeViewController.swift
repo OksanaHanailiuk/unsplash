@@ -40,6 +40,11 @@ class HomeViewController: UIViewController {
         return source
     }()
     
+    lazy var delegate: PhotosDelegate = { [unowned self] in
+        let source = PhotosDelegate(repository: dataRepository)
+        return source
+    }()
+    
     lazy var keyboardHandler: HomeKeyboardController = { [unowned self] in
         let handler = HomeKeyboardController()
         handler.delegate = self

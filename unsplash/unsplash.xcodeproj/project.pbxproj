@@ -175,6 +175,7 @@
 		D717F58520726EF90020729D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D717F5B8207380AA0020729D /* Layout */,
 				D717F589207270F60020729D /* Utils */,
 				D717F588207270F60020729D /* Views */,
 				D717F58620726F100020729D /* HomeViewController.swift */,
@@ -224,6 +225,13 @@
 				D717F5B020737D870020729D /* SearchResponse.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		D717F5B8207380AA0020729D /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		EB85A669DF0ABC8F0271716E /* Pods */ = {

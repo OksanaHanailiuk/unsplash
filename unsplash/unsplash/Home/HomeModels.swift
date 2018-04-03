@@ -21,7 +21,8 @@ enum Home {
     struct ViewModel {
         struct DisplayedPhoto {
             var id: String?
-            var title: String?
+            var height: Int?
+            var width: Int?
             var url: URL?
         }
         var displayedPhotos: [DisplayedPhoto]
