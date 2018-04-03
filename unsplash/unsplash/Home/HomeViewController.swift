@@ -41,15 +41,10 @@ class HomeViewController: UIViewController {
     }()
     
     lazy var delegate: PhotosDelegate = { [unowned self] in
-        let source = PhotosDelegate(repository: dataRepository)
-        source.loadMorePhotos = loadMorePhotos
-        return source
-    }()
-    
-    lazy var keyboardHandler: HomeKeyboardController = { [unowned self] in
-        let handler = HomeKeyboardController()
-        handler.delegate = self
-        return handler
+        let delegate = PhotosDelegate(repository: dataRepository)
+        delegate.loadMorePhotos = loadMorePhotosAction
+        delegate.startScrolling = startScrollingAction
+        return delegate
     }()
     
     override func viewDidLoad() {
@@ -58,22 +53,16 @@ class HomeViewController: UIViewController {
         searchBar.becomeFirstResponder()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        keyboardHandler.subscribe(self)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        keyboardHandler.unsubscribe()
-    }
-    
     //MARK: - actions
-    lazy var loadMorePhotos: () -> Void = { [weak self] in
+    lazy var loadMorePhotosAction: () -> Void = { [weak self] in
         if let searchText = self?.searchBar.text {
             let request = Home.Request(query: searchText)
             self?.interactor?.process(request)
         }
+    }
+    
+    lazy var startScrollingAction: () -> Void = { [weak self] in
+        self?.searchBar.resignFirstResponder()
     }
 }
 
@@ -93,22 +82,6 @@ extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let request = Home.Request(query: searchText)
         interactor?.process(request)
-    }
-}
-
-//TODO: - keyboard handling
-extension HomeViewController: KeyboardControllerDelegate {
-    
-    func controller(_ controller: IKeyboardController, willShowKeyboardWith height: CGFloat) {
-    }
-    
-    func controller(_ controller: IKeyboardController, willHideKeyboardWith height: CGFloat) {
-    }
-    
-    func controller(_ controller: IKeyboardController, willIncreaseHeight delta: CGFloat) {
-    }
-    
-    func controller(_ controller: IKeyboardController, willDecreaseHeight delta: CGFloat) {
     }
 }
 

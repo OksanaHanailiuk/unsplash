@@ -13,6 +13,7 @@ class PhotosDelegate: NSObject {
     private weak var repository: PhotosDataRepository?
     
     var loadMorePhotos: (() -> Void)?
+    var startScrolling: (() -> Void)?
     
     // MARK: - Initialization
     init(repository: PhotosDataRepository?) {
@@ -30,5 +31,13 @@ extension PhotosDelegate: UICollectionViewDelegate {
         if indexPath.row == repoCount - 5 {
             loadMorePhotos?()
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        startScrolling?()
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startScrolling?()
     }
 }
