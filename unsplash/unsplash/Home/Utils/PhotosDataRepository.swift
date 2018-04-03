@@ -28,4 +28,14 @@ class PhotosDataRepository {
         }
         return nil
     }
+    
+    func replace(with array: [Home.ViewModel.DisplayedPhoto]?) {
+        guard let unwrappedArray = array else { return }
+        photos = unwrappedArray
+    }
+    
+    func append(_ array: [Home.ViewModel.DisplayedPhoto]?) {
+        guard let unwrappedArray = array else { return }
+        photos.append(contentsOf: unwrappedArray)
+    }
 }

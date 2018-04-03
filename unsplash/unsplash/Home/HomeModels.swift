@@ -15,6 +15,7 @@ enum Home {
     }
     
     struct Response {
+        var shouldAppend: Bool
         var photos: [Photo]
     }
     
@@ -25,6 +26,7 @@ enum Home {
             var width: Int?
             var url: URL?
         }
+        var shouldAppend: Bool
         var displayedPhotos: [DisplayedPhoto]
     }
 }

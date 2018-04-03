@@ -12,6 +12,8 @@ class PhotosDelegate: NSObject {
 
     private weak var repository: PhotosDataRepository?
     
+    var loadMorePhotos: (() -> Void)?
+    
     // MARK: - Initialization
     init(repository: PhotosDataRepository?) {
         self.repository = repository
@@ -24,19 +26,9 @@ extension PhotosDelegate: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row + 1 == repository?.count {
-            //load more
-        }
-    }
-}
-
-extension PhotosDelegate: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //TODO: correct item resize
-        if let height = repository?.item(at: indexPath.row)?.height, let width = repository?.item(at: indexPath.row)?.width {
-            return CGSize(width: width/25, height: height/25)
-        } else {
-            return CGSize(width: collectionView.frame.size.width/2, height: collectionView.frame.size.height/3)
+        guard let repoCount = repository?.count else { return }
+        if indexPath.row == repoCount - 5 {
+            loadMorePhotos?()
         }
     }
 }

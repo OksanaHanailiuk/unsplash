@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
     
     lazy var delegate: PhotosDelegate = { [unowned self] in
         let source = PhotosDelegate(repository: dataRepository)
+        source.loadMorePhotos = loadMorePhotos
         return source
     }()
     
@@ -65,12 +66,25 @@ class HomeViewController: UIViewController {
         super.viewDidDisappear(animated)
         keyboardHandler.unsubscribe()
     }
+    
+    //MARK: - actions
+    lazy var loadMorePhotos: () -> Void = { [weak self] in
+        if let searchText = self?.searchBar.text {
+            let request = Home.Request(query: searchText)
+            self?.interactor?.process(request)
+        }
+    }
 }
 
 extension HomeViewController: HomeDisplayLogic {
     func display(viewModel: Home.ViewModel) {
-        dataRepository.dispayedPhotos = viewModel.displayedPhotos
+        if viewModel.shouldAppend {
+            dataRepository.append(viewModel.displayedPhotos)
+        } else {
+            dataRepository.dispayedPhotos = viewModel.displayedPhotos
+        }
         photosCollectionView?.reloadData()
+        photosCollectionView?.collectionViewLayout.invalidateLayout()
     }
 }
 
@@ -100,12 +114,12 @@ extension HomeViewController: KeyboardControllerDelegate {
 extension HomeViewController: PortraitLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
         if let height = dataRepository.item(at: indexPath.row)?.height {
-            
-            return CGFloat(height/20)
+            let collectionViewContentWidth = collectionView.contentSize.width/2
+            let coef = CGFloat(height)/collectionViewContentWidth
+            return CGFloat(height/20
+            )
         } else {
             return 100
         }
     }
-    
-    
 }

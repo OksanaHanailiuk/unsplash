@@ -12,11 +12,13 @@ import Alamofire
 class SearchRequest: IRequest {
     
     private var query: String
-    private var itemsPerPage: Int?
-    private var pageNumber: Int?
+    private var itemsPerPage: Int
+    private var pageNumber: Int
     
-    init(query: String, itemsPerPage: Int? = nil, pageNumber: Int? = nil) {
+    init(query: String, itemsPerPage: Int = 20, pageNumber: Int = 1) {
         self.query = query
+        self.itemsPerPage = itemsPerPage
+        self.pageNumber = pageNumber
     }
     
     var httpMethod: HTTPMethod {
@@ -40,9 +42,6 @@ class SearchRequest: IRequest {
     }
     
     func parameters() -> Parameters? {
-        guard let perPage = itemsPerPage, let page = pageNumber else {
-            return [Parameter.query: query, "orientation": "portrait"]
-        }
-        return [Parameter.query: query, Parameter.perPage: perPage, Parameter.page: page]
+        return [Parameter.query: query, Parameter.perPage: itemsPerPage, Parameter.page: pageNumber, "orientation": "portrait"]
     }
 }

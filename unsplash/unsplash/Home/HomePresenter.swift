@@ -27,7 +27,7 @@ class HomePresenter: HomePresentationLogic {
             let displayedPhoto = Home.ViewModel.DisplayedPhoto(id: photo.id, height: photo.height, width: photo.width, url: photo.imageURL)
             displayedPhotos.append(displayedPhoto)
         }
-        let viewModel = Home.ViewModel(displayedPhotos: displayedPhotos)
+        let viewModel = Home.ViewModel(shouldAppend: response.shouldAppend, displayedPhotos: displayedPhotos)
         viewController?.display(viewModel: viewModel)
     }
 }

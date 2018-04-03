@@ -36,8 +36,9 @@ class PortraitLayout: UICollectionViewLayout {
     }
     
     override func prepare() {
-        //MARK: - update cashe
+        //MARK: - update cashe and content height before unpdate
         cache = []
+        contentHeight = 0
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
