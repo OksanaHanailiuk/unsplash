@@ -15,6 +15,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     // MARK: - Variables & Constants
     
     private var photoImageView: UIImageView?
+    private var imageSpinner: UIActivityIndicatorView?
     
     // MARK: - Reuse logic
     
@@ -26,16 +27,21 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         photoImageView?.removeFromSuperview()
         photoImageView = nil
+        imageSpinner?.removeFromSuperview()
+        imageSpinner = nil
     }
     
     // MARK: - Public view setup
      func setupSubviews(for model: Home.ViewModel.DisplayedPhoto) {
         addPhotoImageView()
+        addSpinner(in: photoImageView)
         if let imageUrl = model.url {
             photoImageView?.hnk_setImageFromURL(imageUrl, placeholder: nil, format: nil, failure: { [weak self] error in
                 print("Error")
+                self?.removeSpinner()
                 }, success: { [weak self] image in
                     self?.photoImageView?.image = image
+                    self?.removeSpinner()
             })
         }
     }
@@ -56,4 +62,22 @@ class PhotoCollectionViewCell: UICollectionViewCell {
             })
         }
     }
+    
+    //MARK: - spinner
+    private func addSpinner(in view: UIView?) {
+        guard let unwrappedView = view else { return }
+        imageSpinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        imageSpinner?.frame = unwrappedView.frame
+        imageSpinner?.hidesWhenStopped = true
+        imageSpinner?.startAnimating()
+        if imageSpinner != nil {
+            unwrappedView.addSubview(imageSpinner!)
+        }
+    }
+    
+    private func removeSpinner() {
+        imageSpinner?.stopAnimating()
+        imageSpinner?.removeFromSuperview()
+    }
+    
 }
