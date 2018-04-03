@@ -39,6 +39,8 @@
 		D7544FFF2073A64300FE2868 /* PortraitLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7544FFE2073A64300FE2868 /* PortraitLayout.swift */; };
 		D75450022073F35400FE2868 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450012073F35400FE2868 /* DetailViewController.swift */; };
 		D75450052073F53A00FE2868 /* DetailViewUIInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450042073F53A00FE2868 /* DetailViewUIInitializer.swift */; };
+		D75450072073FEAF00FE2868 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450062073FEAF00FE2868 /* DetailRouter.swift */; };
+		D75450092073FF1100FE2868 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450082073FF1100FE2868 /* DetailInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		D7544FFE2073A64300FE2868 /* PortraitLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitLayout.swift; sourceTree = "<group>"; };
 		D75450012073F35400FE2868 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D75450042073F53A00FE2868 /* DetailViewUIInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewUIInitializer.swift; sourceTree = "<group>"; };
+		D75450062073FEAF00FE2868 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		D75450082073FF1100FE2868 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +245,8 @@
 			children = (
 				D75450032073F51C00FE2868 /* Utils */,
 				D75450012073F35400FE2868 /* DetailViewController.swift */,
+				D75450062073FEAF00FE2868 /* DetailRouter.swift */,
+				D75450082073FF1100FE2868 /* DetailInteractor.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -407,12 +413,14 @@
 				D717F597207280BB0020729D /* ViewControllerFactory.swift in Sources */,
 				D717F5AA20736D9E0020729D /* ImageUrls.swift in Sources */,
 				D75450052073F53A00FE2868 /* DetailViewUIInitializer.swift in Sources */,
+				D75450092073FF1100FE2868 /* DetailInteractor.swift in Sources */,
 				D717F577207257270020729D /* Server.swift in Sources */,
 				D717F59F20728E030020729D /* PhotoDataSource.swift in Sources */,
 				D717F5B120737D870020729D /* SearchEngine.swift in Sources */,
 				D717F59120727EAD0020729D /* HomeRouter.swift in Sources */,
 				D717F59520727ECA0020729D /* HomeModels.swift in Sources */,
 				D717F5A120728E130020729D /* PhotosDataRepository.swift in Sources */,
+				D75450072073FEAF00FE2868 /* DetailRouter.swift in Sources */,
 				D717F5B220737D870020729D /* SearchRequest.swift in Sources */,
 				D7544FFF2073A64300FE2868 /* PortraitLayout.swift in Sources */,
 				D717F57A207257270020729D /* IRequest.swift in Sources */,

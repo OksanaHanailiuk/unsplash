@@ -10,6 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var router: DetailRouter?
+    
     lazy var uiInititalizer: DetailViewUIInitializer = { [unowned self] in
         let initializer = DetailViewUIInitializer(parentVC: self)
         return initializer

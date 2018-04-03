@@ -9,19 +9,26 @@
 import UIKit
 
 protocol HomeRoutingLogic {
-    func show(_ viewController: UIViewController)
+    func routeToDetailVC()
 }
 
-class HomeRouter: HomeRoutingLogic {
+protocol HomeDataPassing {
+    var dataStore: Home.ViewModel.DisplayedPhoto? { get set }
+}
+
+class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
 
     weak var homeVC: HomeViewController?
+    var dataStore: Home.ViewModel.DisplayedPhoto?
     
     //MARK: - inititalizer
     init(viewController: HomeViewController?) {
         self.homeVC = viewController
     }
     
-    func show(_ viewController: UIViewController) {
-        homeVC?.navigationController?.pushViewController(viewController, animated: false)
+    func routeToDetailVC() {
+        let vc = DetailViewController()
+        vc.router?.dataStore?.photo = dataStore
+        homeVC?.navigationController?.pushViewController(DetailViewController(), animated: true)
     }
 }

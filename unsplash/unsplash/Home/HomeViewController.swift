@@ -15,8 +15,8 @@ protocol HomeDisplayLogic: class {
 class HomeViewController: UIViewController {
 
     var interactor: HomeBusinessLogic?
-    var router: HomeRoutingLogic?
-    
+    var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+
     var photosCollectionView: UICollectionView?
     
     lazy var searchBar: UISearchBar = { [unowned self] in
@@ -67,7 +67,8 @@ class HomeViewController: UIViewController {
     }
     
     lazy var didSelectItem: (Home.ViewModel.DisplayedPhoto) -> Void = { [weak self] photoItem in
-        self?.navigationController?.pushViewController(DetailViewController(), animated: true)
+        self?.router?.dataStore = photoItem
+        self?.router?.routeToDetailVC()
     }
 }
 
