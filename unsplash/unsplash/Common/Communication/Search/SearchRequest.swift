@@ -41,7 +41,7 @@ class SearchRequest: IRequest {
     
     func parameters() -> Parameters? {
         guard let perPage = itemsPerPage, let page = pageNumber else {
-            return [Parameter.query: query]
+            return [Parameter.query: query, "orientation": "portrait"]
         }
         return [Parameter.query: query, Parameter.perPage: perPage, Parameter.page: page]
     }

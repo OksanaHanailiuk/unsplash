@@ -13,7 +13,7 @@ protocol HomeBusinessLogic {
 }
 
 class HomeInteractor: HomeBusinessLogic {
-    
+
     private var presenter: HomePresentationLogic?
     private var worker: HomeWorker?
     

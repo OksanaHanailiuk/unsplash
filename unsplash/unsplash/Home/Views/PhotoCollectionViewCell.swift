@@ -44,13 +44,14 @@ class PhotoCollectionViewCell: UICollectionViewCell {
                     self?.removeSpinner()
             })
         }
+        clipsToBounds = true
     }
     
     // MARK: - private part
     private func addPhotoImageView() {
         if photoImageView != nil { return }
         photoImageView = UIImageView()
-        photoImageView?.backgroundColor = .red
+        //photoImageView?.backgroundColor = .red
         photoImageView?.frame.size = frame.size
         photoImageView?.contentMode = .scaleAspectFill
         if photoImageView != nil {

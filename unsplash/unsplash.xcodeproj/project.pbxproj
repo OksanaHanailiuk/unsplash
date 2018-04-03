@@ -38,6 +38,7 @@
 		D717F5B320737D870020729D /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5B020737D870020729D /* SearchResponse.swift */; };
 		D717F5B520737EF30020729D /* IKeyboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5B420737EF30020729D /* IKeyboardController.swift */; };
 		D717F5B720737F310020729D /* HomeKeyboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F5B620737F310020729D /* HomeKeyboardController.swift */; };
+		D7544FFF2073A64300FE2868 /* PortraitLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7544FFE2073A64300FE2868 /* PortraitLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		D717F5B020737D870020729D /* SearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		D717F5B420737EF30020729D /* IKeyboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKeyboardController.swift; sourceTree = "<group>"; };
 		D717F5B620737F310020729D /* HomeKeyboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKeyboardController.swift; sourceTree = "<group>"; };
+		D7544FFE2073A64300FE2868 /* PortraitLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		D717F5B8207380AA0020729D /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				D7544FFE2073A64300FE2868 /* PortraitLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				D717F5A120728E130020729D /* PhotosDataRepository.swift in Sources */,
 				D717F5B520737EF30020729D /* IKeyboardController.swift in Sources */,
 				D717F5B220737D870020729D /* SearchRequest.swift in Sources */,
+				D7544FFF2073A64300FE2868 /* PortraitLayout.swift in Sources */,
 				D717F57A207257270020729D /* IRequest.swift in Sources */,
 				D717F5B720737F310020729D /* HomeKeyboardController.swift in Sources */,
 				D717F578207257270020729D /* HeadersAdapter.swift in Sources */,

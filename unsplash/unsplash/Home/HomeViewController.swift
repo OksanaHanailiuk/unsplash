@@ -96,3 +96,16 @@ extension HomeViewController: KeyboardControllerDelegate {
     func controller(_ controller: IKeyboardController, willDecreaseHeight delta: CGFloat) {
     }
 }
+
+extension HomeViewController: PortraitLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        if let height = dataRepository.item(at: indexPath.row)?.height {
+            
+            return CGFloat(height/20)
+        } else {
+            return 100
+        }
+    }
+    
+    
+}

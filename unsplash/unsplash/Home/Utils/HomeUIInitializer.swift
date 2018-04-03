@@ -32,7 +32,9 @@ class HomeUIInitializer: IInitializer {
     }
     
     private func addCollectionView() {
-        let layout = UICollectionViewFlowLayout()
+        //let layout = UICollectionViewFlowLayout()
+        let layout = PortraitLayout()
+        layout.delegate = parentVC
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier())
         collectionView.backgroundColor = .white
