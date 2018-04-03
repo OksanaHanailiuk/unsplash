@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DetailRouterDataPassing {
-    var dataStore: DetailDataSource? { get }
+    var dataStore: DetailDataSource? { get set }
 }
 
 class DetailRouter: DetailRouterDataPassing {

@@ -41,6 +41,9 @@
 		D75450052073F53A00FE2868 /* DetailViewUIInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450042073F53A00FE2868 /* DetailViewUIInitializer.swift */; };
 		D75450072073FEAF00FE2868 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450062073FEAF00FE2868 /* DetailRouter.swift */; };
 		D75450092073FF1100FE2868 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450082073FF1100FE2868 /* DetailInteractor.swift */; };
+		D754500B207404F800FE2868 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754500A207404F800FE2868 /* DetailPresenter.swift */; };
+		D754500D2074050900FE2868 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754500C2074050900FE2868 /* DetailModels.swift */; };
+		D754500F2074052700FE2868 /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754500E2074052700FE2868 /* DetailWorker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,9 @@
 		D75450042073F53A00FE2868 /* DetailViewUIInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewUIInitializer.swift; sourceTree = "<group>"; };
 		D75450062073FEAF00FE2868 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		D75450082073FF1100FE2868 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		D754500A207404F800FE2868 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		D754500C2074050900FE2868 /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
+		D754500E2074052700FE2868 /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +253,9 @@
 				D75450012073F35400FE2868 /* DetailViewController.swift */,
 				D75450062073FEAF00FE2868 /* DetailRouter.swift */,
 				D75450082073FF1100FE2868 /* DetailInteractor.swift */,
+				D754500A207404F800FE2868 /* DetailPresenter.swift */,
+				D754500C2074050900FE2868 /* DetailModels.swift */,
+				D754500E2074052700FE2868 /* DetailWorker.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -420,7 +429,9 @@
 				D717F59120727EAD0020729D /* HomeRouter.swift in Sources */,
 				D717F59520727ECA0020729D /* HomeModels.swift in Sources */,
 				D717F5A120728E130020729D /* PhotosDataRepository.swift in Sources */,
+				D754500F2074052700FE2868 /* DetailWorker.swift in Sources */,
 				D75450072073FEAF00FE2868 /* DetailRouter.swift in Sources */,
+				D754500D2074050900FE2868 /* DetailModels.swift in Sources */,
 				D717F5B220737D870020729D /* SearchRequest.swift in Sources */,
 				D7544FFF2073A64300FE2868 /* PortraitLayout.swift in Sources */,
 				D717F57A207257270020729D /* IRequest.swift in Sources */,
@@ -431,6 +442,7 @@
 				D717F58720726F100020729D /* HomeViewController.swift in Sources */,
 				D717F572207257270020729D /* BaseResponse.swift in Sources */,
 				D717F574207257270020729D /* ServerConstants.swift in Sources */,
+				D754500B207404F800FE2868 /* DetailPresenter.swift in Sources */,
 				D717F59320727EBD0020729D /* HomeWorker.swift in Sources */,
 				D717F55020724F460020729D /* AppDelegate.swift in Sources */,
 				D717F59D20728DEA0020729D /* PhotosDelegate.swift in Sources */,
