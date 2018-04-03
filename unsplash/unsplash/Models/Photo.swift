@@ -32,9 +32,9 @@ class Photo {
     }
     
     init(json: JSON) {
-        _width = json["width"].int
-        _height = json["height"].int
-        _imageURls = ImageUrls(json: json["urls"])
-        _id = json["id"].string
+        _width = json[JsonConstants.width].int
+        _height = json[JsonConstants.height].int
+        _imageURls = ImageUrls(json: json[JsonConstants.urls])
+        _id = json[JsonConstants.id].string
     }
 }

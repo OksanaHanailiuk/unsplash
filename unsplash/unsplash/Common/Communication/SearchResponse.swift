@@ -27,14 +27,14 @@ class SearchResponse {
     }
     
     init(json: JSON) {
-        _total = json["total"].int
-        _totalPages = json["total_pages"].int
+        _total = json[JsonConstants.total].int
+        _totalPages = json[JsonConstants.totalPages].int
         _photos = parsePhotos(json: json)
     }
     
     private func parsePhotos(json: JSON) -> [Photo] {
         var photos = [Photo]()
-        json["results"].arrayValue.forEach { json in
+        json[JsonConstants.results].arrayValue.forEach { json in
             let photo = Photo(json: json)
             photos.append(photo)
         }

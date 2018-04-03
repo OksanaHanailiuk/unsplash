@@ -10,7 +10,6 @@ import Foundation
 
 struct Api {
     static let baseUrl: String = "https://api.unsplash.com"
-    static let photos: String = "/photos"
     static let searchPhotos: String = "/search/photos"
 }
 
@@ -21,10 +20,22 @@ enum HttpResponseCode: Int {
 }
 
 struct Parameter {
-    static let clientId = "client_id"
+    static let query = "query"
 }
 
 struct JsonConstants {
+    static let results = "results"
+    static let total = "total"
+    static let totalPages = "total_pages"
+    static let width = "width"
+    static let height = "height"
+    static let urls = "urls"
+    static let id = "id"
+    static let full = "full"
+    static let small = "small"
+    static let thumb = "thumb"
+    static let regular = "regular"
+    static let raw = "raw"
 }
 
 struct HeaderKeys {

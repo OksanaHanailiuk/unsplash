@@ -38,11 +38,11 @@ class ImageUrls {
     }
     
     init(json: JSON) {
-        fullPath = json["full"].string
-        smallPath = json["small"].string
-        thumbsPath = json["thumb"].string
-        regularPath = json["regular"].string
-        rawPath = json["raw"].string
+        fullPath = json[JsonConstants.full].string
+        smallPath = json[JsonConstants.small].string
+        thumbsPath = json[JsonConstants.thumb].string
+        regularPath = json[JsonConstants.results].string
+        rawPath = json[JsonConstants.raw].string
     }
     
     private func get(from text: String?) -> URL? {

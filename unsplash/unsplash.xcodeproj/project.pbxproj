@@ -17,7 +17,6 @@
 		D717F577207257270020729D /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F56B207257270020729D /* Server.swift */; };
 		D717F578207257270020729D /* HeadersAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F56C207257270020729D /* HeadersAdapter.swift */; };
 		D717F57A207257270020729D /* IRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F56E207257270020729D /* IRequest.swift */; };
-		D717F57E207259B90020729D /* PhotosRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F57D207259B90020729D /* PhotosRequest.swift */; };
 		D717F58020726E500020729D /* AppUIInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F57F20726E500020729D /* AppUIInitializer.swift */; };
 		D717F58220726E730020729D /* IInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F58120726E730020729D /* IInitializer.swift */; };
 		D717F58720726F100020729D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F58620726F100020729D /* HomeViewController.swift */; };
@@ -54,7 +53,6 @@
 		D717F56B207257270020729D /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		D717F56C207257270020729D /* HeadersAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadersAdapter.swift; sourceTree = "<group>"; };
 		D717F56E207257270020729D /* IRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRequest.swift; sourceTree = "<group>"; };
-		D717F57D207259B90020729D /* PhotosRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRequest.swift; sourceTree = "<group>"; };
 		D717F57F20726E500020729D /* AppUIInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUIInitializer.swift; sourceTree = "<group>"; };
 		D717F58120726E730020729D /* IInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IInitializer.swift; sourceTree = "<group>"; };
 		D717F58620726F100020729D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 				D717F56B207257270020729D /* Server.swift */,
 				D717F56C207257270020729D /* HeadersAdapter.swift */,
 				D717F56E207257270020729D /* IRequest.swift */,
-				D717F57D207259B90020729D /* PhotosRequest.swift */,
 				D717F5982072829F0020729D /* SearchRequest.swift */,
 				D717F5A7207367B50020729D /* SearchEngine.swift */,
 				D717F5AB207373760020729D /* SearchResponse.swift */,
@@ -371,7 +368,6 @@
 				D717F59F20728E030020729D /* PhotoDataSource.swift in Sources */,
 				D717F59120727EAD0020729D /* HomeRouter.swift in Sources */,
 				D717F59520727ECA0020729D /* HomeModels.swift in Sources */,
-				D717F57E207259B90020729D /* PhotosRequest.swift in Sources */,
 				D717F5A120728E130020729D /* PhotosDataRepository.swift in Sources */,
 				D717F57A207257270020729D /* IRequest.swift in Sources */,
 				D717F578207257270020729D /* HeadersAdapter.swift in Sources */,
