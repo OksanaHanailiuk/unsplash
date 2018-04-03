@@ -16,7 +16,7 @@ protocol DetailBusinessLogic {
     func process(_ request: Detail.Request)
 }
 
-class DetailInteractor: DetailDataSource {
+class DetailInteractor: NSObject, DetailDataSource {
     var photo: Home.ViewModel.DisplayedPhoto?
     
     private var presenter: DetailPresentationLogic?

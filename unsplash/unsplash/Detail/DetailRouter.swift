@@ -13,5 +13,12 @@ protocol DetailRouterDataPassing {
 }
 
 class DetailRouter: DetailRouterDataPassing {
+    
     var dataStore: DetailDataSource?
+    weak var detailVC: DetailViewController?
+    
+    //MARK: - inititalizer
+    init(viewController: DetailViewController?) {
+        self.detailVC = viewController
+    }
 }

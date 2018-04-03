@@ -11,6 +11,7 @@ import UIKit
 enum Detail {
     
     struct Request {
+        var url: URL?
     }
     
     struct Response {

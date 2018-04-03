@@ -28,7 +28,12 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     
     func routeToDetailVC() {
         let vc = DetailViewController()
-        vc.router?.dataStore?.photo = dataStore
-        homeVC?.navigationController?.pushViewController(DetailViewController(), animated: true)
+        let presenter = DetailPresenter(viewController: vc)
+        let router = DetailRouter(viewController: vc)
+        let interactor = DetailInteractor(presenter: presenter)
+        interactor.photo = dataStore
+        vc.interactor = interactor
+        vc.router = router
+        homeVC?.navigationController?.pushViewController(vc, animated: true)
     }
 }
