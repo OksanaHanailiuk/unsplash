@@ -116,8 +116,7 @@ extension HomeViewController: PortraitLayoutDelegate {
         if let height = dataRepository.item(at: indexPath.row)?.height {
             let collectionViewContentWidth = collectionView.contentSize.width/2
             let coef = CGFloat(height)/collectionViewContentWidth
-            return CGFloat(height/20
-            )
+            return CGFloat(height/20)
         } else {
             return 100
         }
