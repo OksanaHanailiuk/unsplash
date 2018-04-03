@@ -16,8 +16,8 @@ class HomeWorker: NSObject {
     var delegate: HomeWorkerDelegate?
     
     func fetchPhotos() {
-        SearchEngine().search(by: "nature") { (photos, shouldAppend) in
-            let homeResponse = Home.Response(photos: photos)
+        SearchEngine().search(by: "nature") { (response, shouldAppend) in
+            let homeResponse = Home.Response(photos: response.photos)
             self.delegate?.response(homeResponse)
         }
     }
