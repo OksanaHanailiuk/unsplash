@@ -44,8 +44,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         uiInititalizer.initialize()
-        let request = Home.Request(query: "nature")
-        interactor?.process(request)
     }
 
 }
@@ -58,15 +56,9 @@ extension HomeViewController: HomeDisplayLogic {
 }
 
 extension HomeViewController: UISearchBarDelegate {
-    // MARK: - UISearchBar Delegate
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        
-    }
-}
-
-extension HomeViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let request = Home.Request(query: searchText)
+        interactor?.process(request)
     }
 }
