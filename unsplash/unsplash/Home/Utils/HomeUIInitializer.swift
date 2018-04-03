@@ -23,7 +23,6 @@ class HomeUIInitializer: IInitializer {
         
         setupSearchController()
         addCollectionView()
-
     }
     
     private func setupSearchController() {
@@ -36,7 +35,7 @@ class HomeUIInitializer: IInitializer {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseIdentifier())
-        collectionView.backgroundColor = .green
+        collectionView.backgroundColor = .white
         collectionView.dataSource = parentVC.dataSource
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         parentVC.view.addSubview(collectionView)

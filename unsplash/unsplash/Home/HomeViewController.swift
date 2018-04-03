@@ -40,12 +40,26 @@ class HomeViewController: UIViewController {
         return source
     }()
     
+    lazy var keyboardHandler: HomeKeyboardController = { [unowned self] in
+        let handler = HomeKeyboardController()
+        handler.delegate = self
+        return handler
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         uiInititalizer.initialize()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        keyboardHandler.subscribe(self)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        keyboardHandler.unsubscribe()
+    }
 }
 
 extension HomeViewController: HomeDisplayLogic {
@@ -56,9 +70,24 @@ extension HomeViewController: HomeDisplayLogic {
 }
 
 extension HomeViewController: UISearchBarDelegate {
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let request = Home.Request(query: searchText)
         interactor?.process(request)
+    }
+}
+
+//TODO: - keyboard handling
+extension HomeViewController: KeyboardControllerDelegate {
+    
+    func controller(_ controller: IKeyboardController, willShowKeyboardWith height: CGFloat) {
+    }
+    
+    func controller(_ controller: IKeyboardController, willHideKeyboardWith height: CGFloat) {
+    }
+    
+    func controller(_ controller: IKeyboardController, willIncreaseHeight delta: CGFloat) {
+    }
+    
+    func controller(_ controller: IKeyboardController, willDecreaseHeight delta: CGFloat) {
     }
 }
