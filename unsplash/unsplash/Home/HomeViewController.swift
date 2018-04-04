@@ -51,6 +51,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         uiInititalizer.initialize()
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        } else {
+            print("3D Touch Not Available")
+        }
         searchBar.becomeFirstResponder()
     }
     
@@ -101,5 +107,27 @@ extension HomeViewController: PortraitLayoutDelegate {
         let height = dataRepository.item(at: indexPath.row)?.height
         let width = dataRepository.item(at: indexPath.row)?.width
         return uiInititalizer.calculateHeight(with: height, and: width)
+    }
+}
+
+extension HomeViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+
+        guard let locationCell: CGPoint = photosCollectionView?.convert(location, from: view) else { return nil }
+        guard let indexPath = photosCollectionView?.indexPathForItem(at: locationCell) else { return nil }
+        guard let photoItem = dataRepository.item(at: indexPath.row) else { return nil }
+        
+        if let cell = photosCollectionView?.cellForItem(at: indexPath) {
+            previewingContext.sourceRect = cell.frame
+        }
+        
+        searchBar.resignFirstResponder()
+        router?.dataPassing = photoItem
+        return router?.detailVC
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
     }
 }

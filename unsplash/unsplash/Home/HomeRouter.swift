@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeRoutingLogic {
     func routeToDetailVC()
+    var detailVC: UIViewController? { get }
 }
 
 protocol HomeDataPassing {
@@ -17,6 +18,10 @@ protocol HomeDataPassing {
 }
 
 class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
+    
+    var detailVC: UIViewController? {
+        get { return createDetailVC() }
+    }
 
     weak var homeVC: HomeViewController?
     var dataPassing: Photo?
@@ -27,6 +32,11 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     }
     
     func routeToDetailVC() {
+        guard let vc = detailVC else { return }
+        homeVC?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func createDetailVC() -> UIViewController {
         let vc = DetailViewController()
         let presenter = DetailPresenter(viewController: vc)
         let router = DetailRouter(viewController: vc)
@@ -34,6 +44,6 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
         interactor.photo = dataPassing
         vc.interactor = interactor
         vc.router = router
-        homeVC?.navigationController?.pushViewController(vc, animated: true)
+        return vc
     }
 }
