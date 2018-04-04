@@ -8,14 +8,12 @@
 
 import UIKit
 import SnapKit
-import Haneke
 
 class PhotoCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Variables & Constants
     
-    private var photoImageView: UIImageView?
-    private var imageSpinner: UIActivityIndicatorView?
+    private var photoImageView: LoadingImageView?
     
     // MARK: - Reuse logic
     
@@ -27,31 +25,19 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         photoImageView?.removeFromSuperview()
         photoImageView = nil
-        imageSpinner?.removeFromSuperview()
-        imageSpinner = nil
     }
     
     // MARK: - Public view setup
      func setupSubviews(for model: Photo) {
         addPhotoImageView()
-        addSpinner(in: photoImageView)
-        if let imageUrl = model.imageURL {
-            photoImageView?.hnk_setImageFromURL(imageUrl, placeholder: nil, format: nil, failure: { [weak self] error in
-                print("Error")
-                self?.removeSpinner()
-                }, success: { [weak self] image in
-                    self?.photoImageView?.image = image
-                    self?.removeSpinner()
-            })
-        }
+        photoImageView?.setup(with: model.imageURL)
         clipsToBounds = true
     }
     
     // MARK: - private part
     private func addPhotoImageView() {
         if photoImageView != nil { return }
-        photoImageView = UIImageView()
-        //photoImageView?.backgroundColor = .red
+        photoImageView = LoadingImageView()
         photoImageView?.frame.size = frame.size
         photoImageView?.contentMode = .scaleAspectFill
         if photoImageView != nil {
@@ -64,22 +50,4 @@ class PhotoCollectionViewCell: UICollectionViewCell {
             })
         }
     }
-    
-    //MARK: - spinner
-    private func addSpinner(in view: UIView?) {
-        guard let unwrappedView = view else { return }
-        imageSpinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-        imageSpinner?.frame = unwrappedView.frame
-        imageSpinner?.hidesWhenStopped = true
-        imageSpinner?.startAnimating()
-        if imageSpinner != nil {
-            unwrappedView.addSubview(imageSpinner!)
-        }
-    }
-    
-    private func removeSpinner() {
-        imageSpinner?.stopAnimating()
-        imageSpinner?.removeFromSuperview()
-    }
-    
 }
