@@ -113,14 +113,9 @@ extension HomeViewController: PortraitLayoutDelegate {
 extension HomeViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-
         guard let locationCell: CGPoint = photosCollectionView?.convert(location, from: view) else { return nil }
         guard let indexPath = photosCollectionView?.indexPathForItem(at: locationCell) else { return nil }
         guard let photoItem = dataRepository.item(at: indexPath.row) else { return nil }
-        
-        if let cell = photosCollectionView?.cellForItem(at: indexPath) {
-            previewingContext.sourceRect = cell.frame
-        }
         
         searchBar.resignFirstResponder()
         router?.dataPassing = photoItem
@@ -128,5 +123,6 @@ extension HomeViewController: UIViewControllerPreviewingDelegate {
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
     }
 }
