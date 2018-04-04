@@ -19,6 +19,8 @@ class HomeViewController: UIViewController {
 
     var photosCollectionView: UICollectionView?
     
+    private var defaultQuery = "unsplash"
+    
     lazy var searchBar: UISearchBar = { [unowned self] in
         let searchBar = UISearchBar()
         searchBar.delegate = self
@@ -51,13 +53,21 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         uiInititalizer.initialize()
+       
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.searchBar.becomeFirstResponder()
         }
+        addDefaultSearch()
         
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: view)
         }
+    }
+    
+    private func addDefaultSearch() {
+        searchBar.text = defaultQuery
+        let request = Home.Request(query: defaultQuery)
+        interactor?.process(request)
     }
     
     //MARK: - actions
@@ -95,6 +105,7 @@ extension HomeViewController: HomeDisplayLogic {
 }
 
 extension HomeViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let request = Home.Request(query: searchText)
         interactor?.process(request)
