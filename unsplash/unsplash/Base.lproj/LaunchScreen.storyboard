@@ -19,10 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unsplash" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAq-h5-9Ij">
-                                <rect key="frame" x="62.5" y="308" width="250" height="70"/>
+                                <rect key="frame" x="99" y="308" width="177" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="F84-ys-KvW"/>
-                                    <constraint firstAttribute="width" constant="250" id="gzg-fq-r0B"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="44"/>
                                 <nil key="textColor"/>

@@ -82,7 +82,10 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeDisplayLogic {
     func display(viewModel: Home.ViewModel) {
         if viewModel.shouldAppend {
-            dataRepository.append(viewModel.displayedPhotos)
+            let photos = viewModel.displayedPhotos
+            if photos.count != 0 {
+                dataRepository.append(viewModel.displayedPhotos)
+            }
         } else {
             dataRepository.dispayedPhotos = viewModel.displayedPhotos
         }
