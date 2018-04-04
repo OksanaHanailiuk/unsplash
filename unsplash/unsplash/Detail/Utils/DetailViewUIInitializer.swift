@@ -22,9 +22,8 @@ class DetailViewUIInitializer: IInitializer {
     
     //MARK: - private part
     private func addImageView() {
-        let imageView = UIImageView(frame: parentVC.view.frame)
-        imageView.backgroundColor = .red
-        imageView.contentMode = .scaleAspectFill
+        let imageView = LoadingImageView(frame: parentVC.view.frame)
+        imageView.contentMode = .scaleAspectFit
         parentVC.view.addSubview(imageView)
         parentVC.imageView = imageView
     }

@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     var interactor: (NSObjectProtocol & DetailBusinessLogic & DetailDataSource)?
     var router: DetailRouterDataPassing?
     
-    var imageView: UIImageView?
+    var imageView: LoadingImageView?
     
     lazy var uiInititalizer: DetailViewUIInitializer = { [unowned self] in
         let initializer = DetailViewUIInitializer(parentVC: self)
@@ -29,20 +29,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         uiInititalizer.initialize()
         
+         imageView?.setup(with: interactor?.photo?.largeImageURL)
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if let imageUrl = interactor?.photo?.largeImageURL {
-            imageView?.hnk_setImageFromURL(imageUrl, placeholder: nil, format: nil, failure: { [weak self] error in
-                print("Error")
-                }, success: { [weak self] image in
-                    self?.imageView?.image = image
-                    
-            })
-        }
     }
 }
 

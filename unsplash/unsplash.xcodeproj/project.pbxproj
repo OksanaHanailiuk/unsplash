@@ -44,6 +44,7 @@
 		D754500B207404F800FE2868 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754500A207404F800FE2868 /* DetailPresenter.swift */; };
 		D754500D2074050900FE2868 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754500C2074050900FE2868 /* DetailModels.swift */; };
 		D754500F2074052700FE2868 /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754500E2074052700FE2868 /* DetailWorker.swift */; };
+		D75450112074C21300FE2868 /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450102074C21300FE2868 /* LoadingImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		D754500A207404F800FE2868 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		D754500C2074050900FE2868 /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
 		D754500E2074052700FE2868 /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
+		D75450102074C21300FE2868 /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		D717F56F207257270020729D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D75450102074C21300FE2868 /* LoadingImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				D754500D2074050900FE2868 /* DetailModels.swift in Sources */,
 				D717F5B220737D870020729D /* SearchRequest.swift in Sources */,
 				D7544FFF2073A64300FE2868 /* PortraitLayout.swift in Sources */,
+				D75450112074C21300FE2868 /* LoadingImageView.swift in Sources */,
 				D717F57A207257270020729D /* IRequest.swift in Sources */,
 				D717F578207257270020729D /* HeadersAdapter.swift in Sources */,
 				D717F58F20727EA10020729D /* HomePresenter.swift in Sources */,
