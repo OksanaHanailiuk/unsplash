@@ -22,11 +22,6 @@ class HomePresenter: HomePresentationLogic {
     }
     
     func present(_ response: Home.Response) {
-//        var displayedPhotos: [Photo] = []
-//        response.photos.forEach { photo in
-//            let displayedPhoto = Home.ViewModel.DisplayedPhoto(id: photo.id, height: photo.height, width: photo.width, url: photo.imageURL)
-//            displayedPhotos.append(displayedPhoto)
-//        }
         let viewModel = Home.ViewModel(shouldAppend: response.shouldAppend, displayedPhotos: response.photos)
         viewController?.display(viewModel: viewModel)
     }
