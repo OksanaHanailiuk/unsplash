@@ -10,9 +10,9 @@ import UIKit
 
 class PhotosDataRepository {
     
-    private var photos: [Home.ViewModel.DisplayedPhoto] = []
+    private var photos: [Photo] = []
     
-    var dispayedPhotos: [Home.ViewModel.DisplayedPhoto] = [] {
+    var dispayedPhotos: [Photo] = [] {
         didSet {
             photos = dispayedPhotos
         }
@@ -22,19 +22,19 @@ class PhotosDataRepository {
         return photos.count
     }
     
-    func item(at index: Int) -> Home.ViewModel.DisplayedPhoto? {
+    func item(at index: Int) -> Photo? {
         if index >= 0 && index < photos.count {
             return photos[index]
         }
         return nil
     }
     
-    func replace(with array: [Home.ViewModel.DisplayedPhoto]?) {
+    func replace(with array: [Photo]?) {
         guard let unwrappedArray = array else { return }
         photos = unwrappedArray
     }
     
-    func append(_ array: [Home.ViewModel.DisplayedPhoto]?) {
+    func append(_ array: [Photo]?) {
         guard let unwrappedArray = array else { return }
         photos.append(contentsOf: unwrappedArray)
     }

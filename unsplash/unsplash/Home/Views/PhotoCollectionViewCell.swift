@@ -32,10 +32,10 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Public view setup
-     func setupSubviews(for model: Home.ViewModel.DisplayedPhoto) {
+     func setupSubviews(for model: Photo) {
         addPhotoImageView()
         addSpinner(in: photoImageView)
-        if let imageUrl = model.url {
+        if let imageUrl = model.imageURL {
             photoImageView?.hnk_setImageFromURL(imageUrl, placeholder: nil, format: nil, failure: { [weak self] error in
                 print("Error")
                 self?.removeSpinner()

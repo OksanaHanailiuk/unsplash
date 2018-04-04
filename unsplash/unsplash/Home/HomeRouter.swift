@@ -13,13 +13,13 @@ protocol HomeRoutingLogic {
 }
 
 protocol HomeDataPassing {
-    var dataStore: Home.ViewModel.DisplayedPhoto? { get set }
+    var dataPassing: Photo? { get set }
 }
 
 class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
 
     weak var homeVC: HomeViewController?
-    var dataStore: Home.ViewModel.DisplayedPhoto?
+    var dataPassing: Photo?
     
     //MARK: - inititalizer
     init(viewController: HomeViewController?) {
@@ -31,7 +31,7 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
         let presenter = DetailPresenter(viewController: vc)
         let router = DetailRouter(viewController: vc)
         let interactor = DetailInteractor(presenter: presenter)
-        interactor.photo = dataStore
+        interactor.photo = dataPassing
         vc.interactor = interactor
         vc.router = router
         homeVC?.navigationController?.pushViewController(vc, animated: true)

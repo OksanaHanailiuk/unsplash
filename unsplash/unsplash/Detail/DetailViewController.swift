@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let imageUrl = interactor?.photo?.url {
+        if let imageUrl = interactor?.photo?.largeImageURL {
             imageView?.hnk_setImageFromURL(imageUrl, placeholder: nil, format: nil, failure: { [weak self] error in
                 print("Error")
                 }, success: { [weak self] image in

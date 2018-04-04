@@ -23,6 +23,10 @@ class Photo {
         get { return _imageURls?.thumbsUrl }
     }
     
+    var largeImageURL: URL? {
+        get { return _imageURls?.fullUrl }
+    }
+    
     var width: Int? {
         get { return _width }
     }

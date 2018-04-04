@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DetailDataSource {
-    var photo: Home.ViewModel.DisplayedPhoto? { get set }
+    var photo: Photo? { get set }
 }
 
 protocol DetailBusinessLogic {
@@ -17,7 +17,7 @@ protocol DetailBusinessLogic {
 }
 
 class DetailInteractor: NSObject, DetailDataSource {
-    var photo: Home.ViewModel.DisplayedPhoto?
+    var photo: Photo?
     
     private var presenter: DetailPresentationLogic?
     private var worker: DetailWorker?

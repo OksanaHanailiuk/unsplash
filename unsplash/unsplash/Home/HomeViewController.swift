@@ -66,8 +66,8 @@ class HomeViewController: UIViewController {
         self?.searchBar.resignFirstResponder()
     }
     
-    lazy var didSelectItem: (Home.ViewModel.DisplayedPhoto) -> Void = { [weak self] photoItem in
-        self?.router?.dataStore = photoItem
+    lazy var didSelectItem: (Photo) -> Void = { [weak self] photoItem in
+        self?.router?.dataPassing = photoItem
         self?.router?.routeToDetailVC()
     }
 }

@@ -14,7 +14,7 @@ class PhotosDelegate: NSObject {
     
     var loadMorePhotos: (() -> Void)?
     var startScrolling: (() -> Void)?
-    var didSelectItem: ((Home.ViewModel.DisplayedPhoto) -> Void)?
+    var didSelectItem: ((Photo) -> Void)?
     
     // MARK: - Initialization
     init(repository: PhotosDataRepository?) {
