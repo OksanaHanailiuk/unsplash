@@ -16,6 +16,7 @@ class Server: NSObject {
     
     func sendRequest(_ request: IRequest, responseHandler: @escaping (_ response: IResponse) -> Void) {
         NSLog("Sending request: \(request.endpoint)")
+        
         let sessionManager = Alamofire.SessionManager.default
         sessionManager.adapter = HeadersAdapter()
         sessionManager.request(request.endpoint, method: request.httpMethod, parameters: request.parameters(), encoding: request.encoding, headers: request.httpHeaders()).responseJSON { [weak self] response in
@@ -30,14 +31,6 @@ class Server: NSObject {
         
         let serverResponse = BaseResponse(data: response.data)
         let statusCode = response.response?.statusCode
-        if statusCode == HttpResponseCode.statusOk.rawValue {
-            // TODO: handle specific behaviour related to success responses
-        } else if statusCode == HttpResponseCode.statusUnauthorized.rawValue {
-            // TODO: refresh server communication token
-        } else {
-            // TODO: handle http errors
-        }
-        
         serverResponse.isSuccess = (statusCode == HttpResponseCode.statusOk.rawValue)
         responseHandler(serverResponse)
     }
