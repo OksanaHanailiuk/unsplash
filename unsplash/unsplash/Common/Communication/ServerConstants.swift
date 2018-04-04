@@ -23,6 +23,7 @@ struct Parameter {
     static let query = "query"
     static let perPage = "per_page"
     static let page = "page"
+    static let orientation = "orientation"
 }
 
 struct JsonConstants {
