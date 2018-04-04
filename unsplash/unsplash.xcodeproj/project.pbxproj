@@ -45,6 +45,7 @@
 		D754500D2074050900FE2868 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754500C2074050900FE2868 /* DetailModels.swift */; };
 		D754500F2074052700FE2868 /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D754500E2074052700FE2868 /* DetailWorker.swift */; };
 		D75450112074C21300FE2868 /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450102074C21300FE2868 /* LoadingImageView.swift */; };
+		D75450132075148E00FE2868 /* NoResultsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75450122075148E00FE2868 /* NoResultsLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		D754500C2074050900FE2868 /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
 		D754500E2074052700FE2868 /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
 		D75450102074C21300FE2868 /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
+		D75450122075148E00FE2868 /* NoResultsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultsLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				D75450102074C21300FE2868 /* LoadingImageView.swift */,
+				D75450122075148E00FE2868 /* NoResultsLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				D717F59F20728E030020729D /* PhotoDataSource.swift in Sources */,
 				D717F5B120737D870020729D /* SearchEngine.swift in Sources */,
 				D717F59120727EAD0020729D /* HomeRouter.swift in Sources */,
+				D75450132075148E00FE2868 /* NoResultsLabel.swift in Sources */,
 				D717F59520727ECA0020729D /* HomeModels.swift in Sources */,
 				D717F5A120728E130020729D /* PhotosDataRepository.swift in Sources */,
 				D754500F2074052700FE2868 /* DetailWorker.swift in Sources */,
