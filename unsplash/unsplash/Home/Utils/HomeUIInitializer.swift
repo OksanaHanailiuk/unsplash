@@ -22,6 +22,7 @@ class HomeUIInitializer: IInitializer {
     func initialize() {
 
         parentVC.view.backgroundColor = .white
+        setupBackButton()
         setupSearchController()
         addCollectionView()
     }
@@ -33,6 +34,13 @@ class HomeUIInitializer: IInitializer {
             return CGFloat(CGFloat(unwrappedHeight)/coef)
         }
         return defaultCellHeight
+    }
+    
+    private func setupBackButton() {
+        let backItem = UIBarButtonItem()
+        backItem.tintColor = .gray
+        backItem.title = " "
+        parentVC.navigationItem.backBarButtonItem = backItem
     }
     
     private func setupSearchController() {

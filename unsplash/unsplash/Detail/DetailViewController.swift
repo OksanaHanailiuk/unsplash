@@ -29,6 +29,20 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         uiInititalizer.initialize()
         interactor?.process()
+        
+        //navigationItem.backBarButtonItem?.title = " "
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       // navigationItem.backBarButtonItem?.title = " "
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            //self.navigationItem.backBarButtonItem?.title = " "
+        }
     }
 }
 

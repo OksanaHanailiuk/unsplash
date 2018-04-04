@@ -54,14 +54,12 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.searchBar.becomeFirstResponder()
         }
-        
-        
+
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: view)
         } else {
             print("3D Touch Not Available")
         }
-        
     }
     
     //MARK: - actions
