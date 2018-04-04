@@ -30,7 +30,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     // MARK: - Public view setup
      func setupSubviews(for model: Photo) {
         addPhotoImageView()
-        photoImageView?.setup(with: model.imageURL)
+        photoImageView?.setup(withRegularURL: model.imageURL)
         clipsToBounds = true
     }
     

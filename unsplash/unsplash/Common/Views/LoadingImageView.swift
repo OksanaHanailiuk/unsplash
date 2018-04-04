@@ -15,21 +15,31 @@ class LoadingImageView: UIImageView {
     
     var imageURL: URL?
     
-    func setup(with url: URL?) {
-        backgroundColor = .white
+    func setup(withRegularURL url: URL?, andFullURL fullUrl: URL? = nil) {
+       backgroundColor = .white
         showLoading()
-        if let imageUrl = url {
-            hnk_setImageFromURL(imageUrl, placeholder: nil, format: nil, failure: { [weak self] error in
-                print("Error")
-                self?.hideLoading()
-                }, success: { [weak self] image in
-                    self?.image = image
-                    self?.hideLoading()
+        if let regularUrl = url {
+           load(regularUrl)
+        }
+        
+        if let largeUrl = fullUrl {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                self.load(largeUrl)
             })
         }
     }
     
     //MARK: - spinner
+    
+    private func load(_ url: URL) {
+        hnk_setImageFromURL(url, placeholder: nil, format: nil, failure: { [weak self] error in
+            print("Error")
+            self?.hideLoading()
+            }, success: { [weak self] image in
+                self?.image = image
+                self?.hideLoading()
+        })
+    }
     
     private func showLoading() {
         if activityIndicator == nil {

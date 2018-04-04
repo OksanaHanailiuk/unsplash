@@ -17,7 +17,7 @@ class DetailWorker: NSObject {
     var delegate: DetailWorkerDelegate?
     
     func photoDetail(dataSource: DetailDataSource) {
-        let response = Detail.Response(photo: dataSource.photo)
+        let response = Detail.Response(imageUrl: dataSource.photo?.imageURL, largeUrl: dataSource.photo?.largeImageURL)
         delegate?.response(response)
     }
 }

@@ -34,6 +34,6 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: DetailDisplayLogic {
     func display(viewModel: Detail.ViewModel) {
-        imageView?.setup(with: viewModel.imageUrl)
+        imageView?.setup(withRegularURL: viewModel.imageUrl, andFullURL: viewModel.largeUrl)
     }
 }
