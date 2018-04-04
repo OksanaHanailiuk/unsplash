@@ -15,7 +15,7 @@ protocol DetailDisplayLogic: class {
 
 class DetailViewController: UIViewController {
 
-    var interactor: (NSObjectProtocol & DetailBusinessLogic & DetailDataSource)?
+    var interactor: (DetailBusinessLogic & DetailDataSource)?
     var router: DetailRouterDataPassing?
     
     var imageView: LoadingImageView?
@@ -28,14 +28,12 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         uiInititalizer.initialize()
-        
-         imageView?.setup(with: interactor?.photo?.largeImageURL)
-        
+        interactor?.process()
     }
 }
 
 extension DetailViewController: DetailDisplayLogic {
     func display(viewModel: Detail.ViewModel) {
-        
+        imageView?.setup(with: viewModel.imageUrl)
     }
 }

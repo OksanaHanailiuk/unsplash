@@ -22,6 +22,6 @@ class DetailPresenter: DetailPresentationLogic {
     }
     
     func present(_ response: Detail.Response) {
-        
+        viewController?.display(viewModel: Detail.ViewModel(imageUrl: response.photo?.largeImageURL))
     }
 }

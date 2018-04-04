@@ -10,13 +10,11 @@ import UIKit
 
 enum Detail {
     
-    struct Request {
-        var url: URL?
-    }
-    
     struct Response {
+        var photo: Photo?
     }
     
     struct ViewModel {
+        var imageUrl: URL?
     }
 }

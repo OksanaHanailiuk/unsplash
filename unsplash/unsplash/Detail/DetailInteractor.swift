@@ -13,10 +13,10 @@ protocol DetailDataSource {
 }
 
 protocol DetailBusinessLogic {
-    func process(_ request: Detail.Request)
+    func process()
 }
 
-class DetailInteractor: NSObject, DetailDataSource {
+class DetailInteractor: DetailDataSource {
     var photo: Photo?
     
     private var presenter: DetailPresentationLogic?
@@ -26,11 +26,19 @@ class DetailInteractor: NSObject, DetailDataSource {
     init(presenter: DetailPresentationLogic?) {
         self.presenter = presenter
         worker = DetailWorker()
+        worker?.delegate = self
     }
 }
 
 extension DetailInteractor: DetailBusinessLogic {
-    func process(_ request: Detail.Request) {
-        
+    func process() {
+        worker?.photoDetail(dataSource: self)
+    }
+}
+
+extension DetailInteractor: DetailWorkerDelegate {
+    
+    func response(_ response: Detail.Response) {
+        presenter?.present(response)
     }
 }

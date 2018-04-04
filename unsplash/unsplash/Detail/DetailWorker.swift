@@ -8,6 +8,16 @@
 
 import UIKit
 
-class DetailWorker: NSObject {
+protocol DetailWorkerDelegate {
+    func response(_ response: Detail.Response)
+}
 
+class DetailWorker: NSObject {
+    
+    var delegate: DetailWorkerDelegate?
+    
+    func photoDetail(dataSource: DetailDataSource) {
+        let response = Detail.Response(photo: dataSource.photo)
+        delegate?.response(response)
+    }
 }
