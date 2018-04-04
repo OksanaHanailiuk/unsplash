@@ -23,7 +23,7 @@ class LoadingImageView: UIImageView {
         }
         
         if let largeUrl = fullUrl {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
                 self.load(largeUrl)
             })
         }
@@ -33,7 +33,6 @@ class LoadingImageView: UIImageView {
     
     private func load(_ url: URL) {
         hnk_setImageFromURL(url, placeholder: nil, format: nil, failure: { [weak self] error in
-            print("Error")
             self?.hideLoading()
             }, success: { [weak self] image in
                 self?.image = image
