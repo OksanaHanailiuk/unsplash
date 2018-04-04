@@ -20,12 +20,6 @@ enum Home {
     }
     
     struct ViewModel {
-//        struct DisplayedPhoto {
-//            var id: String?
-//            var height: Int?
-//            var width: Int?
-//            var url: URL?
-//        }
         var shouldAppend: Bool
         var displayedPhotos: [Photo]
     }

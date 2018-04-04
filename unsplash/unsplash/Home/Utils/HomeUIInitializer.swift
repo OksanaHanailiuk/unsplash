@@ -14,6 +14,8 @@ class HomeUIInitializer: IInitializer {
     private var parentVC: HomeViewController
     
     private let defaultCellHeight: CGFloat = 50
+    private let offset: CGFloat = 13
+    private let inset: CGFloat = 5
     
     init(parentVC: HomeViewController) {
         self.parentVC = parentVC
@@ -51,7 +53,6 @@ class HomeUIInitializer: IInitializer {
     }
     
     private func addCollectionView() {
-        //let layout = UICollectionViewFlowLayout()
         let layout = PortraitLayout()
         layout.delegate = parentVC
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -59,12 +60,12 @@ class HomeUIInitializer: IInitializer {
         collectionView.backgroundColor = .white
         collectionView.dataSource = parentVC.dataSource
         collectionView.delegate = parentVC.delegate
-        collectionView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        collectionView.contentInset = UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset)
         parentVC.view.addSubview(collectionView)
         parentVC.photosCollectionView = collectionView
         var topOffset: CGFloat = 0
         if let navBarFrame = parentVC.navigationController?.navigationBar.frame {
-            topOffset = navBarFrame.origin.y + navBarFrame.size.height + 13
+            topOffset = navBarFrame.origin.y + navBarFrame.size.height + offset
         }
         collectionView.snp.makeConstraints { maker in
             maker.leading.equalToSuperview()

@@ -25,7 +25,6 @@ enum Orientation {
 }
 
 class SearchRequest: IRequest {
-    
     private var query: String
     private var itemsPerPage: Int
     private var pageNumber: Int
