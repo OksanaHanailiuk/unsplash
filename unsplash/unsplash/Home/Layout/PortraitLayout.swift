@@ -14,7 +14,7 @@ protocol PortraitLayoutDelegate: class {
 
 class PortraitLayout: UICollectionViewLayout {
     
-    weak var delegate: PortraitLayoutDelegate!
+    weak var delegate: PortraitLayoutDelegate?
     
     private var numberOfColumns = 2
     private var cellPadding: CGFloat = 6
@@ -51,9 +51,8 @@ class PortraitLayout: UICollectionViewLayout {
         var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
         
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
-            
             let indexPath = IndexPath(item: item, section: 0)
-            let photoHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
+            guard let photoHeight = delegate?.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath) else { return }
             let height = cellPadding * 2 + photoHeight
             let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)

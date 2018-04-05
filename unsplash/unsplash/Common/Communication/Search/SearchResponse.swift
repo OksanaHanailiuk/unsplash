@@ -10,26 +10,23 @@ import UIKit
 import SwiftyJSON
 
 class SearchResponse {
-    private var _total: Int?
-    private var _totalPages: Int?
-    private var _photos: [Photo] = []
+    
+    private var json: JSON
     
     var total: Int? {
-        get { return _total }
+        get { return json[JsonConstants.total].int }
     }
     
     var totalPages: Int? {
-        get { return _totalPages }
+        get { return json[JsonConstants.totalPages].int }
     }
     
     var photos: [Photo] {
-        get { return _photos }
+        get { return parsePhotos(json: json) }
     }
     
     init(json: JSON) {
-        _total = json[JsonConstants.total].int
-        _totalPages = json[JsonConstants.totalPages].int
-        _photos = parsePhotos(json: json)
+        self.json = json
     }
     
     private func parsePhotos(json: JSON) -> [Photo] {

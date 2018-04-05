@@ -9,19 +9,8 @@
 import UIKit
 import Alamofire
 
-enum Orientation {
+enum Orientation: String {
     case portrait, landscape, squarish
-    
-    var value: String {
-        switch self {
-        case .portrait:
-            return "portrait"
-        case .landscape:
-            return "landscape"
-        case .squarish:
-            return "squarish"
-        }
-    }
 }
 
 class SearchRequest: IRequest {
@@ -56,6 +45,6 @@ class SearchRequest: IRequest {
     }
     
     func parameters() -> Parameters? {
-        return [Parameter.query: query, Parameter.perPage: itemsPerPage, Parameter.page: pageNumber, Parameter.orientation: Orientation.portrait.value]
+        return [Parameter.query: query, Parameter.perPage: itemsPerPage, Parameter.page: pageNumber, Parameter.orientation: Orientation.portrait.rawValue]
     }
 }
